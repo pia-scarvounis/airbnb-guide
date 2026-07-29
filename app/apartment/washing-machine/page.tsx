@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ApartmentDetailLayout from "../DetailLayout";
 
 const steps = [
@@ -38,11 +39,7 @@ const steps = [
 
 export default function WashingMachinePage() {
   return (
-    <ApartmentDetailLayout
-      title="Washing Machine"
-      image="/apartment-washing-machine.jpg"
-      imageFit="contain"
-    >
+    <ApartmentDetailLayout title="Washing Machine">
       <p>The washing machine is located in the bathroom.</p>
 
       <ol className="mt-4 space-y-4">
@@ -66,6 +63,15 @@ export default function WashingMachinePage() {
         <strong className="font-medium text-zinc-900 dark:text-zinc-50">balcony</strong> if
         you would like to air-dry your clothes.
       </p>
+
+      <div className="relative mt-4 aspect-[4/5] w-full overflow-hidden rounded-2xl bg-stone-50 dark:bg-zinc-800">
+        <Image
+          src="/apartment-washing-machine.jpg"
+          alt="Washing machine"
+          fill
+          className="object-contain p-10"
+        />
+      </div>
 
       <div className="mt-6 rounded-xl bg-stone-100 p-3 text-sm text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
         When the cycle has finished, please leave the door and detergent

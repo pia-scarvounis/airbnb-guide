@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ApartmentDetailLayout from "../DetailLayout";
 
 const steps = [
@@ -37,11 +38,7 @@ const steps = [
 
 export default function CoffeeMachinePage() {
   return (
-    <ApartmentDetailLayout
-      title="Coffee Machine"
-      image="/apartment-coffee.jpg"
-      imageFit="contain"
-    >
+    <ApartmentDetailLayout title="Coffee Machine">
       <ol className="space-y-4">
         {steps.map((step, i) => (
           <li key={step.title} className="flex gap-3">
@@ -57,6 +54,16 @@ export default function CoffeeMachinePage() {
           </li>
         ))}
       </ol>
+
+      <div className="relative mt-4 aspect-[4/5] w-full overflow-hidden rounded-2xl bg-stone-50 dark:bg-zinc-800">
+        <Image
+          src="/apartment-coffee.jpg"
+          alt="Coffee machine"
+          fill
+          className="object-contain p-10"
+        />
+      </div>
+
       <div className="mt-6 rounded-xl bg-stone-100 p-3 text-sm text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
         ☕ Buy coffee ground on the second-finest setting — Fuglen and most
         other cafés around town can grind it for you.
