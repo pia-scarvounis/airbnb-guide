@@ -139,7 +139,7 @@ function Tile({ category }: { category: Category }) {
 export default function ApartmentPage() {
   return (
     <div className="flex flex-1 flex-col bg-stone-50 dark:bg-zinc-950">
-      <div className="mx-auto flex w-full max-w-xl flex-1 flex-col px-6 pt-6 pb-10">
+      <div className="mx-auto flex w-full flex-1 flex-col px-6 pt-6 pb-10 md:max-w-xl">
         <Link
           href="/"
           className="inline-flex w-fit items-center gap-1 text-sm text-stone-500 transition-colors hover:text-stone-900 dark:text-zinc-400 dark:hover:text-zinc-50"
