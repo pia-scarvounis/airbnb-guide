@@ -1,8 +1,9 @@
+import Image from "next/image";
 import ApartmentDetailLayout from "../DetailLayout";
 
 export default function FanPage() {
   return (
-    <ApartmentDetailLayout title="Fan" image="/apartment-fan.jpg" imageFit="cover">
+    <ApartmentDetailLayout title="Fan">
       <p>
         During the summer months, a fan is available in the bedroom. The
         remote control can be found on the bedside table.
@@ -26,6 +27,11 @@ export default function FanPage() {
           after a set number of hours.
         </li>
       </ul>
+
+      <div className="relative mt-4 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-200 dark:bg-zinc-800">
+        <Image src="/apartment-fan.jpg" alt="Fan" fill className="object-cover object-top" />
+      </div>
+
       <p className="mt-4">
         Please turn the fan off when you leave the apartment, and leave the
         remote control on the bedside table when you check out.

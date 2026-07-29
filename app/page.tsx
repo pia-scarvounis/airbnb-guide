@@ -66,7 +66,7 @@ const categories: Category[] = [
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-white dark:bg-black">
-      <div className="mx-auto flex w-full max-w-md flex-1 flex-col">
+      <div className="mx-auto flex w-full max-w-xl flex-1 flex-col">
         {/* Hero */}
         <section className="relative mx-6 mt-6 overflow-hidden rounded-3xl px-7 pb-20 pt-10 text-white">
           <Image
@@ -74,7 +74,7 @@ export default function Home() {
             alt=""
             fill
             priority
-            sizes="(max-width: 448px) 100vw, 448px"
+            sizes="(max-width: 576px) 100vw, 576px"
             className="object-cover"
           />
           <div

@@ -13,19 +13,6 @@ type Category = {
 
 const categories: Category[] = [
   {
-    label: "Recycling & Trash",
-    href: "/apartment/recycling",
-    bg: "bg-emerald-100 dark:bg-emerald-900/30",
-    fg: "text-emerald-600 dark:text-emerald-300",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4.5 7.5h15M9.75 7.5V5.25A1.5 1.5 0 0 1 11.25 3.75h1.5a1.5 1.5 0 0 1 1.5 1.5V7.5M6.75 7.5v11.25a1.5 1.5 0 0 0 1.5 1.5h7.5a1.5 1.5 0 0 0 1.5-1.5V7.5M10.5 11.25v6M13.5 11.25v6"
-      />
-    ),
-  },
-  {
     label: "Home Essentials",
     href: "/apartment/essentials",
     bg: "bg-stone-200 dark:bg-zinc-800",
@@ -35,6 +22,19 @@ const categories: Category[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M2.25 12 11.2 4.05a1.5 1.5 0 0 1 1.6 0L21.75 12M4.5 9.75V19.5a.75.75 0 0 0 .75.75h3.75v-6h6v6h3.75a.75.75 0 0 0 .75-.75V9.75"
+      />
+    ),
+  },
+  {
+    label: "Recycling & Trash",
+    href: "/apartment/recycling",
+    bg: "bg-emerald-100 dark:bg-emerald-900/30",
+    fg: "text-emerald-600 dark:text-emerald-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 7.5h15M9.75 7.5V5.25A1.5 1.5 0 0 1 11.25 3.75h1.5a1.5 1.5 0 0 1 1.5 1.5V7.5M6.75 7.5v11.25a1.5 1.5 0 0 0 1.5 1.5h7.5a1.5 1.5 0 0 0 1.5-1.5V7.5M10.5 11.25v6M13.5 11.25v6"
       />
     ),
   },
@@ -139,7 +139,7 @@ function Tile({ category }: { category: Category }) {
 export default function ApartmentPage() {
   return (
     <div className="flex flex-1 flex-col bg-stone-50 dark:bg-zinc-950">
-      <div className="mx-auto flex w-full max-w-md flex-1 flex-col px-6 pt-6 pb-10">
+      <div className="mx-auto flex w-full max-w-xl flex-1 flex-col px-6 pt-6 pb-10">
         <Link
           href="/"
           className="inline-flex w-fit items-center gap-1 text-sm text-stone-500 transition-colors hover:text-stone-900 dark:text-zinc-400 dark:hover:text-zinc-50"

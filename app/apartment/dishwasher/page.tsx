@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ApartmentDetailLayout from "../DetailLayout";
 
 const steps = [
@@ -19,11 +20,7 @@ const steps = [
 
 export default function DishwasherPage() {
   return (
-    <ApartmentDetailLayout
-      title="Dishwasher"
-      image="/apartment-dishwasher-tablets.jpg"
-      imageFit="contain"
-    >
+    <ApartmentDetailLayout title="Dishwasher">
       <p>
         The dishwasher tablets are located in the cupboard above the oven.
       </p>
@@ -43,6 +40,15 @@ export default function DishwasherPage() {
           </li>
         ))}
       </ol>
+
+      <div className="relative mt-4 aspect-[4/5] w-full overflow-hidden rounded-2xl bg-stone-50 dark:bg-zinc-800">
+        <Image
+          src="/apartment-dishwasher-tablets.jpg"
+          alt="Dishwasher tablets location"
+          fill
+          className="object-contain p-10"
+        />
+      </div>
 
       <div className="mt-6 rounded-xl bg-stone-100 p-3 text-sm text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
         When the cycle has finished, I usually leave the door slightly open

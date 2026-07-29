@@ -32,15 +32,6 @@ export default function RecyclingPage() {
     <ApartmentDetailLayout title="Recycling & Trash">
       <p>Under the kitchen sink you&apos;ll find three waste containers:</p>
 
-      <div className="relative mt-4 aspect-[3/4] w-full overflow-hidden rounded-2xl bg-stone-200 dark:bg-zinc-800">
-        <Image
-          src="/recycling-bins.jpg"
-          alt="Waste containers under the kitchen sink"
-          fill
-          className="object-cover"
-        />
-      </div>
-
       <div className="mt-4 flex flex-col gap-3">
         {bins.map((bin) => (
           <div
@@ -64,6 +55,15 @@ export default function RecyclingPage() {
         Please rinse plastic packaging before throwing it away, and thank
         you for helping sort the waste.
       </p>
+
+      <div className="relative mt-4 aspect-[3/4] w-full overflow-hidden rounded-2xl bg-stone-200 dark:bg-zinc-800">
+        <Image
+          src="/recycling-bins.jpg"
+          alt="Waste containers under the kitchen sink"
+          fill
+          className="object-cover"
+        />
+      </div>
 
       <p className="mt-8 font-medium text-zinc-900 dark:text-zinc-50">
         Where do you take out the trash?
