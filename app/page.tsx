@@ -1,65 +1,156 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Dancing_Script, Playfair_Display } from "next/font/google";
+
+const dancingScript = Dancing_Script({ subsets: ["latin"], weight: ["700"] });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600"] });
+
+type Category = {
+  label: string;
+  description: string;
+  icon: React.ReactNode;
+  href?: string;
+};
+
+const categories: Category[] = [
+  {
+    label: "WiFi",
+    description: "Network & password",
+    href: "/wifi",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M5 12.55a11 11 0 0 1 14 0M8.5 16.4a6 6 0 0 1 7 0M12 20h.01"
+      />
+    ),
+  },
+  {
+    label: "The Apartment",
+    description: "Check-in, keys & how things work",
+    href: "/apartment",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.25 12 11.2 4.05a1.5 1.5 0 0 1 1.6 0L21.75 12M4.5 9.75V19.5a.75.75 0 0 0 .75.75h3.75v-6h6v6h3.75a.75.75 0 0 0 .75-.75V9.75"
+      />
+    ),
+  },
+  {
+    label: "My Oslo Favorites",
+    description: "Where I actually go",
+    href: "/favorites",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11.25 4.5c-1.6-2-5.3-1.2-5.9 1.6-.5 2.4 1.6 4.5 5.9 8.4 4.3-3.9 6.4-6 5.9-8.4-.6-2.8-4.3-3.6-5.9-1.6Z"
+      />
+    ),
+  },
+  {
+    label: "Local Info",
+    description: "Live neighborhood info",
+    href: "/local-info",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11.25 11.25h.375a.375.375 0 0 1 .375.375v4.125m-.75-8.25h.008v.008h-.008V7.5ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+      />
+    ),
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="flex flex-1 flex-col bg-white dark:bg-black">
+      <div className="mx-auto flex w-full max-w-md flex-1 flex-col">
+        {/* Hero */}
+        <section className="relative mx-6 mt-6 overflow-hidden rounded-3xl px-7 pb-20 pt-10 text-white">
+          <Image
+            src="/hero-courtyard.jpg"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 448px) 100vw, 448px"
+            className="object-cover"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/75"
+          />
+          <div className="relative">
+            <h1
+              className={`${playfair.className} max-w-[14ch] text-4xl leading-[1.15]`}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Welcome to my home in Kværnerbyen
+            </h1>
+            <p className="mt-4 max-w-xs text-sm leading-6 text-zinc-200">
+              Here you&apos;ll find everything you need to know about the
+              apartment, from practical information to my personal
+              recommendations for places to eat, drink, and explore.
+            </p>
+            <p className="mt-3 max-w-xs text-sm leading-6 text-zinc-200">
+              Make yourself at home, and please don&apos;t hesitate to get in
+              touch if you have any questions.
+            </p>
+            <p
+              className={`${dancingScript.className} mt-3 flex items-center gap-1.5 text-2xl text-white`}
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+              Pia
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11.25 4.5c-1.6-2-5.3-1.2-5.9 1.6-.5 2.4 1.6 4.5 5.9 8.4 4.3-3.9 6.4-6 5.9-8.4-.6-2.8-4.3-3.6-5.9-1.6Z"
+                />
+              </svg>
+            </p>
+          </div>
+        </section>
+
+        {/* Quick access row — overlaps the hero */}
+        <section className="relative z-10 mb-10 -mt-12 mx-6 rounded-3xl bg-white p-5 shadow-xl shadow-black/10 ring-1 ring-black/5 dark:bg-zinc-950 dark:ring-white/10">
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-4">
+            {categories.map((category) => {
+              const className =
+                "flex w-16 flex-col items-center gap-2 text-center";
+              const content = (
+                <>
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-100 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-800 dark:group-hover:bg-zinc-700">
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      className="text-zinc-900 dark:text-zinc-50"
+                    >
+                      {category.icon}
+                    </svg>
+                  </span>
+                  <span className="text-xs font-medium leading-4 text-zinc-600 dark:text-zinc-300">
+                    {category.label}
+                  </span>
+                </>
+              );
+
+              return category.href ? (
+                <Link key={category.label} href={category.href} className={`group ${className}`}>
+                  {content}
+                </Link>
+              ) : (
+                <button key={category.label} type="button" className={`group ${className}`}>
+                  {content}
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
