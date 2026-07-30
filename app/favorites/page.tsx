@@ -64,6 +64,18 @@ const places: Place[] = [
       "Oslofjord Sauna is one of Oslo's most unique experiences. Relax in a floating sauna before taking a refreshing dip in the Oslofjord. It's popular all year round, but especially during the winter months when the contrast between the hot sauna and the icy water is unforgettable. Remember to book in advance, especially on weekends.",
   },
   {
+    name: "Botanical Garden",
+    category: "Activities",
+    image: "/favorites-botanical-garden.jpg",
+    mapsQuery: "Botanical Garden Oslo",
+    directions: [
+      "🚶 30 min walk",
+      "🚌 Walk about 10 minutes to Galgeberg, then take bus 20 to Tøyenparken.",
+    ],
+    description:
+      "Botanical Garden is one of Oslo's most beautiful green spaces and a perfect place for a relaxing walk. With thousands of plants from around the world, peaceful ponds and colourful seasonal flowers, it's a lovely escape from the city. Entry is free all year round.",
+  },
+  {
     name: "Hammerhai",
     category: "Bars",
     image: "/favorites-hammerhai.jpg",
