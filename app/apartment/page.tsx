@@ -26,6 +26,19 @@ const categories: Category[] = [
     ),
   },
   {
+    label: "WiFi",
+    href: "/wifi",
+    bg: "bg-blue-100 dark:bg-blue-900/30",
+    fg: "text-blue-600 dark:text-blue-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M5 12.55a11 11 0 0 1 14 0M8.5 16.4a6 6 0 0 1 7 0M12 20h.01"
+      />
+    ),
+  },
+  {
     label: "Recycling & Trash",
     href: "/apartment/recycling",
     bg: "bg-emerald-100 dark:bg-emerald-900/30",
@@ -90,37 +103,33 @@ const categories: Category[] = [
       />
     ),
   },
+  {
+    label: "Long Stays",
+    href: "/apartment/long-stays",
+    bg: "bg-lime-100 dark:bg-lime-900/30",
+    fg: "text-lime-700 dark:text-lime-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 21c4.5-3 7.5-6.5 7.5-10.5a7.5 7.5 0 1 0-15 0C4.5 14.5 7.5 18 12 21Z M12 8.25v6M9 11.25h6"
+      />
+    ),
+  },
+  {
+    label: "Emergency",
+    href: "/apartment/emergency",
+    bg: "bg-red-50 dark:bg-red-950/40",
+    fg: "text-red-400 dark:text-red-400",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9.75 3.75h4.5M12 3.75v3M8.25 8.25h7.5l-.75 12h-6l-.75-12ZM10.5 8.25V6.75a1.5 1.5 0 0 1 3 0v1.5"
+      />
+    ),
+  },
 ];
-
-const emergency: Category & { description: string } = {
-  label: "Emergency",
-  href: "/apartment/emergency",
-  bg: "bg-red-50 dark:bg-red-950/40",
-  fg: "text-red-400 dark:text-red-400",
-  description: "Important information and emergency numbers.",
-  icon: (
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M9.75 3.75h4.5M12 3.75v3M8.25 8.25h7.5l-.75 12h-6l-.75-12ZM10.5 8.25V6.75a1.5 1.5 0 0 1 3 0v1.5"
-    />
-  ),
-};
-
-const wifi: Category & { description: string } = {
-  label: "WiFi",
-  href: "/wifi",
-  bg: "bg-stone-100 dark:bg-zinc-800",
-  fg: "text-stone-600 dark:text-zinc-300",
-  description: "Network name and password.",
-  icon: (
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M5 12.55a11 11 0 0 1 14 0M8.5 16.4a6 6 0 0 1 7 0M12 20h.01"
-    />
-  ),
-};
 
 function Tile({ category }: { category: Category }) {
   return (
@@ -177,66 +186,6 @@ export default function ApartmentPage() {
             <Tile key={category.label} category={category} />
           ))}
         </div>
-
-        <Link
-          href={wifi.href}
-          className={`group relative mt-3 flex items-center gap-4 rounded-2xl border border-stone-200/70 bg-white p-4 pr-10 transition-colors hover:bg-stone-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800`}
-        >
-          <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${wifi.bg}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={wifi.fg}>
-              {wifi.icon}
-            </svg>
-          </span>
-          <div>
-            <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-              {wifi.label}
-            </p>
-            <p className="mt-0.5 text-sm leading-5 text-stone-600 dark:text-zinc-300">
-              {wifi.description}
-            </p>
-          </div>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-300 transition-transform group-hover:translate-x-0.5 dark:text-zinc-600"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-          </svg>
-        </Link>
-
-        <Link
-          href={emergency.href}
-          className={`group relative mt-3 flex items-center gap-4 rounded-2xl p-4 pr-10 transition-colors ${emergency.bg}`}
-        >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white dark:bg-zinc-900">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={emergency.fg}>
-              {emergency.icon}
-            </svg>
-          </span>
-          <div>
-            <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-              {emergency.label}
-            </p>
-            <p className="mt-0.5 text-sm leading-5 text-stone-600 dark:text-zinc-300">
-              {emergency.description}
-            </p>
-          </div>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-300 transition-transform group-hover:translate-x-0.5 dark:text-zinc-600"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-          </svg>
-        </Link>
       </div>
     </div>
   );
