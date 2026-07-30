@@ -4,11 +4,66 @@ import { Playfair_Display } from "next/font/google";
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600"] });
 
 const items = [
-  { emoji: "🚌", label: "Live bus departures" },
-  { emoji: "🚲", label: "Oslo City Bikes" },
-  { emoji: "🛴", label: "E-scooters" },
-  { emoji: "🌤️", label: "Current weather" },
-  { emoji: "🛒", label: "Local shops, cafés and restaurants, including opening hours" },
+  {
+    label: "Bus departures",
+    bg: "bg-rose-100 dark:bg-rose-900/30",
+    fg: "text-rose-600 dark:text-rose-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 6.75A2.25 2.25 0 0 1 6.75 4.5h10.5a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25H6.75a2.25 2.25 0 0 1-2.25-2.25v-9ZM4.5 12h15M8.25 18v1.5M15.75 18v1.5M7.5 8.25h2.25M14.25 8.25h2.25"
+      />
+    ),
+  },
+  {
+    label: "City Bikes",
+    bg: "bg-emerald-100 dark:bg-emerald-900/30",
+    fg: "text-emerald-600 dark:text-emerald-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M5.25 17a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM18.75 17a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM5.25 14.5 9 8.25h4.5l3 5.25M9 8.25 7.5 6H6M13.5 8.25l2.25 4"
+      />
+    ),
+  },
+  {
+    label: "E-scooters",
+    bg: "bg-violet-100 dark:bg-violet-900/30",
+    fg: "text-violet-600 dark:text-violet-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 19.5h4.5M6.75 19.5V16.5a1.5 1.5 0 0 1 1.5-1.5h6.75V6.75a1.5 1.5 0 0 1 1.5-1.5h1.5M9 19.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0ZM15.75 16.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0Z"
+      />
+    ),
+  },
+  {
+    label: "Weather",
+    bg: "bg-amber-100 dark:bg-amber-900/30",
+    fg: "text-amber-600 dark:text-amber-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 6.75a3.75 3.75 0 0 1 7.34-1.144A3 3 0 0 1 15.75 11.5H8.25a3 3 0 0 1-.75-5.905A3.75 3.75 0 0 1 9 6.75ZM6 15.75v1.5M10.5 15.75v1.5M15 15.75v1.5"
+      />
+    ),
+  },
+  {
+    label: "Shops, cafés & restaurants",
+    bg: "bg-stone-200 dark:bg-zinc-800",
+    fg: "text-stone-600 dark:text-zinc-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 7.5V6a3 3 0 0 1 6 0v1.5M3.75 7.5h13.5l-.9 11.25a1.5 1.5 0 0 1-1.5 1.35H6.15a1.5 1.5 0 0 1-1.5-1.35L3.75 7.5Z"
+      />
+    ),
+  },
 ];
 
 export default function LocalInfoPage() {
@@ -29,28 +84,26 @@ export default function LocalInfoPage() {
           Local Info
         </h1>
         <p className="mt-3 text-base text-stone-500 dark:text-zinc-400">
-          Everything you need during your stay in Kværnerbyen is available
-          on the local neighbourhood website.
+          The official Kværnerbyen website provides live local information
+          throughout your stay.
         </p>
 
-        <p className="mt-6 text-sm font-medium text-zinc-900 dark:text-zinc-50">
-          Here you&apos;ll find:
-        </p>
-        <div className="mt-3 flex flex-col gap-2">
+        <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-6">
           {items.map((item) => (
-            <div
-              key={item.label}
-              className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-md shadow-black/5 dark:bg-zinc-900"
-            >
-              <span className="text-lg">{item.emoji}</span>
-              <span className="text-sm text-stone-600 dark:text-zinc-300">
+            <div key={item.label} className="flex w-20 flex-col items-center gap-2 text-center">
+              <span className={`flex h-14 w-14 items-center justify-center rounded-full ${item.bg}`}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={item.fg}>
+                  {item.icon}
+                </svg>
+              </span>
+              <span className="text-xs font-medium leading-4 text-zinc-700 dark:text-zinc-300">
                 {item.label}
               </span>
             </div>
           ))}
         </div>
 
-        <p className="mt-6 text-sm leading-6 text-stone-600 dark:text-zinc-300">
+        <p className="mt-8 text-sm leading-6 text-stone-600 dark:text-zinc-300">
           The information is updated automatically, making it the easiest
           way to stay up to date during your visit.
         </p>
@@ -61,7 +114,10 @@ export default function LocalInfoPage() {
           rel="noopener noreferrer"
           className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
         >
-          Open KVBYEN →
+          Open KVBYEN
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5h6v6M19.5 4.5 10 14M6 6H4.5v13.5H18V18" />
+          </svg>
         </a>
       </div>
     </div>

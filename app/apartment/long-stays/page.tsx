@@ -13,7 +13,7 @@ export default function LongStaysPage() {
       </p>
       <p className="mt-2">
         I&apos;d really appreciate it if you could water the plants once a
-        week during your stay.
+        week during your stay, or whenever they look thirsty.
       </p>
 
       <p className="mt-6 font-medium text-zinc-900 dark:text-zinc-50">

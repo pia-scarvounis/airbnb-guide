@@ -14,7 +14,8 @@ const bins = [
   },
   {
     name: "Purple bag",
-    description: "Plastic packaging.",
+    description:
+      "Plastic packaging (please rinse before throwing it away).",
     dot: "bg-violet-400",
   },
 ];
@@ -50,11 +51,6 @@ export default function RecyclingPage() {
           </div>
         ))}
       </div>
-
-      <p className="mt-4">
-        Please rinse plastic packaging before throwing it away, and thank
-        you for helping sort the waste.
-      </p>
 
       <div className="relative mt-4 aspect-[3/4] w-full overflow-hidden rounded-2xl bg-stone-200 dark:bg-zinc-800">
         <Image
