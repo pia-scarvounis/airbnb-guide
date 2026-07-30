@@ -81,7 +81,7 @@ export default function LocalInfoPage() {
         </Link>
 
         <h1 className={`${playfair.className} mt-4 text-6xl text-zinc-900 dark:text-zinc-50`}>
-          Local Info
+          Local Kværnerbyen Info
         </h1>
         <p className="mt-3 text-base text-stone-500 dark:text-zinc-400">
           The official Kværnerbyen website provides live local information

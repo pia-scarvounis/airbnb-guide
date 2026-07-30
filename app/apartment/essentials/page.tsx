@@ -16,6 +16,20 @@ const items = [
     ),
   },
   {
+    title: "Tap water",
+    description:
+      "Norwegian tap water is clean, safe to drink and among the highest quality in the world. Feel free to refill your water bottle from any tap in the apartment.",
+    bg: "bg-cyan-100 dark:bg-cyan-900/30",
+    fg: "text-cyan-700 dark:text-cyan-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3.75c3 3.75 6 7.386 6 10.875a6 6 0 1 1-12 0c0-3.489 3-7.125 6-10.875Z"
+      />
+    ),
+  },
+  {
     title: "Soaps & toiletries",
     description:
       "Feel free to use the shampoo, conditioner, shower gel and hand soap in the bathroom.",
@@ -32,7 +46,7 @@ const items = [
   {
     title: "Pots & pans",
     description:
-      "Frying pans and saucepans are stored inside the oven, with extra cookware in the cupboard to the left of the sink.",
+      "Frying pans and saucepans are stored inside the oven, with extra cookware in the cupboard under the sink.",
     bg: "bg-violet-100 dark:bg-violet-900/30",
     fg: "text-violet-700 dark:text-violet-300",
     icon: (

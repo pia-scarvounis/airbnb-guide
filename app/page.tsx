@@ -26,6 +26,18 @@ const categories: Category[] = [
     ),
   },
   {
+    label: "Local Kværnerbyen Info",
+    description: "Live neighborhood info",
+    href: "/local-info",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M11.25 11.25h.375a.375.375 0 0 1 .375.375v4.125m-.75-8.25h.008v.008h-.008V7.5ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+      />
+    ),
+  },
+  {
     label: "My Oslo Favorites",
     description: "Where I actually go",
     href: "/favorites",
@@ -34,18 +46,6 @@ const categories: Category[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M11.25 4.5c-1.6-2-5.3-1.2-5.9 1.6-.5 2.4 1.6 4.5 5.9 8.4 4.3-3.9 6.4-6 5.9-8.4-.6-2.8-4.3-3.6-5.9-1.6Z"
-      />
-    ),
-  },
-  {
-    label: "Local Info",
-    description: "Live neighborhood info",
-    href: "/local-info",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M11.25 11.25h.375a.375.375 0 0 1 .375.375v4.125m-.75-8.25h.008v.008h-.008V7.5ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
       />
     ),
   },

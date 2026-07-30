@@ -26,15 +26,94 @@ type Place = {
   tip?: string;
   image?: string;
   mapsQuery?: string;
+  website?: string;
 };
 
 const places: Place[] = [
+  {
+    name: "BLÅ",
+    category: "Bars",
+    image: "/favorites-bla.jpg",
+    mapsQuery: "Blå Oslo",
+    directions: [
+      "🚶 45 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Møllerveien, then walk about 3 minutes.",
+    ],
+    description:
+      "BLÅ is one of Oslo's most iconic live music venues, located along the Akerselva river. It's known for its diverse concert programme, featuring everything from jazz and electronic music to hip-hop and international artists. On Sundays, they host live concerts, and the surrounding area often comes alive with markets, food stalls and a lively atmosphere. It's the perfect place to experience Oslo's creative and alternative side, whether you're stopping by for a drink or a night of live music.",
+  },
+  {
+    name: "KUMI",
+    category: "Cafés",
+    image: "/favorites-kumi.jpg",
+    mapsQuery: "KUMI Oslobukta",
+    directions: [
+      "🚶 20–25 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 5 minutes.",
+    ],
+    description:
+      "KUMI is a beautiful organic café and restaurant serving modern vegetarian and vegan comfort food inspired by Japanese and Nordic flavours. It's one of my favourite places for brunch or lunch, with excellent coffee, fresh juices, mocktails and a carefully selected menu of wine, beer and cocktails. The bright interior and sunny outdoor seating in Oslobukta make it a perfect place to relax after exploring the Opera House and MUNCH Museum.",
+  },
+  {
+    name: "ZZ Pizza",
+    category: "Restaurants",
+    image: "/favorites-zz-pizza.jpg",
+    mapsQuery: "ZZ Pizza Oslo",
+    directions: [
+      "🚶 10 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at St. Halvards gate (1 stop).",
+    ],
+    description:
+      "ZZ Pizza is one of my favourite pizza places in Oslo, serving authentic Neapolitan-style pizzas with airy, wood-fired crusts and high-quality ingredients. If you're not sure what to order, I highly recommend the Pancetta & Blue Cheese pizza or the Mushroom pizza - they're both favourites of mine. It's a great spot for lunch or dinner if you're craving authentic Italian pizza.",
+  },
+  {
+    name: "Madonna",
+    category: "Restaurants",
+    image: "/favorites-madonna.jpg",
+    mapsQuery: "Madonna Oslo",
+    directions: [
+      "🚶 25 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 3 minutes.",
+    ],
+    description:
+      "Madonna is one of my favourite restaurants in Oslo, located right next to the MUNCH Museum in Bjørvika. This modern bistro serves creative dishes inspired by flavours from around the world, using seasonal ingredients in a relaxed and welcoming setting. It's featured in the Michelin Guide, but still feels unpretentious and perfect for a long dinner with friends. In the summer, the outdoor seating is a great place to enjoy the evening.",
+  },
+  {
+    name: "Smia Galleri",
+    category: "Restaurants",
+    image: "/favorites-smia-galleri.jpg",
+    mapsQuery: "Smia Galleri Oslo",
+    directions: ["🚶 10 min walk"],
+    description:
+      "Smia Galleri is one of my favourite neighbourhood restaurants, set in a beautifully restored former blacksmith's workshop. It's known for seasonal Nordic cuisine, a warm atmosphere and a charming courtyard that's especially lovely in the summer. Whether you're stopping by for lunch, dinner or a glass of wine, it's a hidden gem just a short walk from the apartment.",
+  },
+  {
+    name: "Kraft",
+    category: "Restaurants",
+    image: "/favorites-kraft.jpg",
+    mapsQuery: "Kraft Restaurant Oslo",
+    directions: ["🚶 3–4 min walk"],
+    description:
+      "Kraft is a cozy neighbourhood restaurant just a few minutes from the apartment. It's a great choice for lunch or dinner, serving seasonal dishes made with fresh ingredients in a relaxed atmosphere. The menu changes regularly and often features traditional Norwegian home-style cooking alongside lighter lunch options. If you're looking for a good meal close to home, this is my favourite local restaurant.",
+  },
+  {
+    name: "Delicatessen",
+    category: "Restaurants",
+    image: "/favorites-delicatessen.jpg",
+    mapsQuery: "Delicatessen Oslo",
+    directions: [
+      "🚶 40 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Jakob kirke, then walk about 3 minutes.",
+    ],
+    description:
+      "Delicatessen is one of Oslo's most popular tapas restaurants and a great place to share a meal with friends or family. The menu features a wide selection of authentic Spanish tapas, from classic favourites to seasonal specials, all served in a lively and relaxed atmosphere. It's especially popular in the evenings, so booking a table in advance is recommended.",
+  },
   {
     name: "Fuglen Coffee Roasters",
     category: "Cafés",
     image: "/favorites-fuglen.jpg",
     directions: [
-      "🚶 7–10 min walk",
+      "🚶 10 min walk",
       "🚌 Take bus 54 towards Kjelsås stasjon, get off at St Halvards gate. Fuglen is right next to the bus stop.",
     ],
     description:
@@ -45,11 +124,35 @@ const places: Place[] = [
     category: "Cafés",
     image: "/favorites-galgen.jpg",
     directions: [
-      "🚶 12 min walk",
+      "🚶 15 min walk",
       "🚌 Take bus 54 towards Kjelsås stasjon, get off at St Halvards gate, then walk 4–5 minutes.",
     ],
     description:
-      "Only 12 minutes from the apartment, Galgen is one of my favorite nearby places. It's perfect for lunch or dinner, a drink on the outdoor terrace in the summer, or a cozy hot chocolate during the winter.",
+      "Only 15 minutes from the apartment, Galgen is one of my favorite nearby places. It's perfect for lunch or dinner, a drink on the outdoor terrace in the summer, or a cozy hot chocolate during the winter.",
+  },
+  {
+    name: "Kroloftet & Kruttverket",
+    category: "Cafés",
+    image: "/favorites-kroloftet.jpg",
+    mapsQuery: "Kruttverket Oslo",
+    website: "https://www.kroloftet.no/",
+    directions: [
+      "🚶 Walk through Svartdalsparken for about 15 minutes. The scenic path follows the river all the way to Kroloftet & Kruttverket.",
+    ],
+    description:
+      "Kroloftet & Kruttverket is one of my favourite local spots and well worth the walk through Svartdalsparken. During the day, it's a cozy café serving excellent coffee and freshly baked pastries, while in the evenings it becomes a relaxed bar and cultural venue. They host live music, talks, workshops and community events throughout the year, including live jazz on many Sunday evenings. You can also book a sauna by the river, making it a perfect place to spend an afternoon or evening. For upcoming events and more information, visit their website.",
+  },
+  {
+    name: "Hakone",
+    category: "Cafés",
+    image: "/favorites-hakone.jpg",
+    mapsQuery: "Hakone Coffee Oslo",
+    directions: [
+      "🚶 40 min walk",
+      "🚌 Take bus 54 towards Jernbanetorget and get off at Storgata or Jernbanetorget. The nearest Hakone is just a short walk from both stops.",
+    ],
+    description:
+      "Hakone is one of my favourite coffee chains in Oslo, with several locations across the city. Inspired by Japanese coffee culture, it combines minimalist design with excellent specialty coffee and high-quality pastries. If you're looking for a quick coffee to go or a peaceful place to take a break, Hakone is always a great choice. Don't miss their popular pistachio croissant if it's available!",
   },
   {
     name: "Oslofjord Sauna",
@@ -74,6 +177,29 @@ const places: Place[] = [
     ],
     description:
       "Botanical Garden is one of Oslo's most beautiful green spaces and a perfect place for a relaxing walk. With thousands of plants from around the world, peaceful ponds and colourful seasonal flowers, it's a lovely escape from the city. Entry is free all year round.",
+  },
+  {
+    name: "Ekebergparken",
+    category: "Activities",
+    image: "/favorites-ekebergparken.jpg",
+    mapsQuery: "Ekebergparken Oslo",
+    directions: [
+      "🚶 30–35 min walk",
+      "🚌 Walk about 5 minutes to Kværner, then take bus 34 to Ekeberg Camping.",
+    ],
+    description:
+      "Ekebergparken is one of Oslo's most beautiful places for a walk, combining nature, contemporary art and spectacular views over the city and the Oslofjord. Along the trails you'll discover sculptures by internationally renowned artists, peaceful forest paths and panoramic viewpoints. If you're visiting in the evening, don't miss the impressive underground light installations by James Turrell. Best of all, the park is free to visit and open all year round.",
+  },
+  {
+    name: "Korketrekkeren",
+    category: "Activities",
+    image: "/favorites-korketrekkeren.jpg",
+    mapsQuery: "Korketrekkeren Oslo",
+    directions: [
+      "🚌 Take bus 54 towards Jernbanetorget. From Jernbanetorget, take Metro Line 1 to Frognerseteren. The toboggan run starts just below the metro station.",
+    ],
+    description:
+      "A winter favourite! Korketrekkeren is one of Oslo's most popular winter activities. Rent a sled (or bring your own) and enjoy a thrilling 2 km ride through the forest down to Midtstuen. From there, simply take the metro back to Frognerseteren and do it all over again. Sleds and helmets can be rented near Frognerseteren station, and it's completely free if you bring your own sled. The run is open whenever there's enough snow, making it a fun experience for both families and adults.",
   },
   {
     name: "Hammerhai",
@@ -201,6 +327,24 @@ function PlaceCard({ place }: { place: Place }) {
           </svg>
           Open in Google Maps
         </a>
+
+        {place.website && (
+          <a
+            href={place.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-full border border-stone-200 py-3 text-sm font-medium text-zinc-900 transition-colors hover:bg-stone-50 dark:border-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-800"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3.6 9h16.8M3.6 15h16.8M11.5 3a15.3 15.3 0 0 0 0 18M12.5 3a15.3 15.3 0 0 1 0 18"
+              />
+            </svg>
+            Visit Website
+          </a>
+        )}
       </div>
     </div>
   );
