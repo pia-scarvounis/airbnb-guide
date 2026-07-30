@@ -17,6 +17,15 @@ export default function LongStaysPage() {
       </p>
 
       <p className="mt-6 font-medium text-zinc-900 dark:text-zinc-50">
+        🧺 Towels
+      </p>
+      <p className="mt-2">
+        If you&apos;re staying for several days, you&apos;re welcome to use
+        additional towels if needed. You&apos;ll find them under the sink
+        in the bathroom.
+      </p>
+
+      <p className="mt-6 font-medium text-zinc-900 dark:text-zinc-50">
         🧹 Cleaning
       </p>
       <p className="mt-2">

@@ -30,20 +30,6 @@ const items = [
     ),
   },
   {
-    title: "Towels",
-    description:
-      "If you're staying for several days, you're welcome to use additional towels if needed.",
-    bg: "bg-sky-100 dark:bg-sky-900/30",
-    fg: "text-sky-700 dark:text-sky-300",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4.5 8.25h15M4.5 12h15M4.5 15.75h15"
-      />
-    ),
-  },
-  {
     title: "Pots & pans",
     description:
       "Frying pans and saucepans are stored inside the oven, with extra cookware in the cupboard to the left of the sink.",
