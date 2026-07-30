@@ -4,7 +4,7 @@ const items = [
   {
     title: "Private belongings",
     description:
-      "Some cupboards and drawers are marked with yellow tape and contain my personal belongings. Everything else is available for you to use.",
+      "I live here myself day-to-day, so some cupboards and drawers are marked with yellow tape, and the top shelf of the fridge is mine too. Everything else is available for you to use, including basic staples in the cabinets and fridge - help yourself if something looks tempting.",
     bg: "bg-amber-100 dark:bg-amber-900/30",
     fg: "text-amber-700 dark:text-amber-300",
     icon: (
@@ -60,7 +60,7 @@ const items = [
   {
     title: "TV & streaming",
     description:
-      "The TV is connected to Apple TV. Feel free to use my streaming services, or sign in to your own — just remember to sign out before you check out.",
+      "The TV is connected to Apple TV. Feel free to use my streaming services, or sign in to your own - just remember to sign out before you check out.",
     bg: "bg-slate-100 dark:bg-zinc-800",
     fg: "text-slate-700 dark:text-zinc-300",
     icon: (

@@ -32,7 +32,7 @@ export default function WifiPage() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
-      // Clipboard API unavailable — guest can still select and copy the text manually.
+      // Clipboard API unavailable - guest can still select and copy the text manually.
     }
   }
 

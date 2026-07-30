@@ -65,7 +65,7 @@ export default function CoffeeMachinePage() {
       </div>
 
       <div className="mt-6 rounded-xl bg-stone-100 p-3 text-sm text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
-        ☕ Buy coffee ground on the second-finest setting — Fuglen and most
+        ☕ Buy coffee ground on the second-finest setting - Fuglen and most
         other cafés around town can grind it for you.
       </div>
     </ApartmentDetailLayout>

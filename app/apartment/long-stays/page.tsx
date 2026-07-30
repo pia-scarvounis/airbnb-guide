@@ -4,7 +4,7 @@ export default function LongStaysPage() {
   return (
     <ApartmentDetailLayout title="Long Stays">
       <p>
-        If you&apos;re staying for a week or longer, here are a few extra
+        If you&apos;re staying for several days, here are a few extra
         things that may be useful.
       </p>
 
@@ -29,7 +29,7 @@ export default function LongStaysPage() {
         🧹 Cleaning
       </p>
       <p className="mt-2">
-        A handheld vacuum cleaner and a spray mop will be available in the
+        A handheld vacuum cleaner and a Jif mop will be available in the
         living room (where the chest of drawers is normally located).
       </p>
       <p className="mt-3">

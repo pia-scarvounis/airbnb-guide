@@ -112,7 +112,7 @@ export default function RecyclingPage() {
       </div>
 
       <div className="mt-4 rounded-xl bg-stone-100 p-3 text-sm text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
-        Remember to bring the key — the door is locked.
+        Remember to bring the key - the door is locked.
       </div>
 
       <p className="mt-8 font-medium text-zinc-900 dark:text-zinc-50">
@@ -126,7 +126,7 @@ export default function RecyclingPage() {
         </li>
         <li>
           Leave the deposit items in the kitchen, or collect them in a bag
-          — and I&apos;ll take care of the rest.
+          - and I&apos;ll take care of the rest.
         </li>
       </ul>
     </ApartmentDetailLayout>

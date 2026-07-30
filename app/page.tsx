@@ -68,7 +68,7 @@ export default function Home() {
             />
             <div
               aria-hidden
-              className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/75"
+              className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/90"
             />
             <div className="relative">
               <h1
@@ -100,7 +100,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Quick access row — overlaps the hero */}
+          {/* Quick access row - overlaps the hero */}
           <div className="relative z-10 -mt-12 mx-6 shrink-0 mb-[max(2.5rem,calc(env(safe-area-inset-bottom)+1rem))] rounded-3xl bg-white p-5 shadow-xl shadow-black/10 ring-1 ring-black/5 dark:bg-zinc-950 dark:ring-white/10">
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-4">
             {categories.map((category) => {

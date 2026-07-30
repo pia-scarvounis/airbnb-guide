@@ -227,7 +227,7 @@ export default function FavoritesPage() {
           My Oslo Favorites
         </h1>
         <p className="mt-3 text-base text-stone-500 dark:text-zinc-400">
-          Where I actually go — restaurants, cafés, bars and a few things
+          Where I actually go - restaurants, cafés, bars and a few things
           worth doing while you&apos;re here.
         </p>
 
