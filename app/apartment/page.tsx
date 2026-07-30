@@ -107,6 +107,21 @@ const emergency: Category & { description: string } = {
   ),
 };
 
+const wifi: Category & { description: string } = {
+  label: "WiFi",
+  href: "/wifi",
+  bg: "bg-stone-100 dark:bg-zinc-800",
+  fg: "text-stone-600 dark:text-zinc-300",
+  description: "Network name and password.",
+  icon: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M5 12.55a11 11 0 0 1 14 0M8.5 16.4a6 6 0 0 1 7 0M12 20h.01"
+    />
+  ),
+};
+
 function Tile({ category }: { category: Category }) {
   return (
     <Link
@@ -164,6 +179,36 @@ export default function ApartmentPage() {
         </div>
 
         <Link
+          href={wifi.href}
+          className={`group relative mt-3 flex items-center gap-4 rounded-2xl border border-stone-200/70 bg-white p-4 pr-10 transition-colors hover:bg-stone-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800`}
+        >
+          <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${wifi.bg}`}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={wifi.fg}>
+              {wifi.icon}
+            </svg>
+          </span>
+          <div>
+            <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+              {wifi.label}
+            </p>
+            <p className="mt-0.5 text-sm leading-5 text-stone-600 dark:text-zinc-300">
+              {wifi.description}
+            </p>
+          </div>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-300 transition-transform group-hover:translate-x-0.5 dark:text-zinc-600"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </Link>
+
+        <Link
           href={emergency.href}
           className={`group relative mt-3 flex items-center gap-4 rounded-2xl p-4 pr-10 transition-colors ${emergency.bg}`}
         >
@@ -192,27 +237,6 @@ export default function ApartmentPage() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
           </svg>
         </Link>
-
-        <div className="mt-4 flex items-center gap-3 rounded-2xl border border-stone-200/70 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-stone-100 dark:bg-zinc-800">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="text-stone-500 dark:text-zinc-400">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 10.5h7.5M8.25 13.5h4.5M21 12c0 4.556-4.03 8.25-9 8.25a9.76 9.76 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.4-.1-.806-.443-1.032A8.161 8.161 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
-              />
-            </svg>
-          </span>
-          <div>
-            <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-              Questions?
-            </p>
-            <p className="text-sm leading-5 text-stone-600 dark:text-zinc-300">
-              If you need help or can&apos;t find something, just send me a
-              message.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -14,18 +14,6 @@ type Category = {
 
 const categories: Category[] = [
   {
-    label: "WiFi",
-    description: "Network & password",
-    href: "/wifi",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M5 12.55a11 11 0 0 1 14 0M8.5 16.4a6 6 0 0 1 7 0M12 20h.01"
-      />
-    ),
-  },
-  {
     label: "The Apartment",
     description: "Check-in, keys & how things work",
     href: "/apartment",
@@ -98,7 +86,7 @@ export default function Home() {
                 in touch if you have any questions.
               </p>
               <p
-                className={`${dancingScript.className} mt-3 flex items-center gap-1.5 text-2xl text-white`}
+                className={`${dancingScript.className} mt-8 flex items-center gap-1.5 text-2xl text-white`}
               >
                 Pia
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">

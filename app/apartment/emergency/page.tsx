@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ApartmentDetailLayout from "../DetailLayout";
 
 const fireIcon = (
@@ -40,12 +41,7 @@ const numbers = [
 
 export default function EmergencyPage() {
   return (
-    <ApartmentDetailLayout
-      title="Emergency"
-      image="/emergency-extinguisher-v2.jpg"
-      imageFit="cover"
-      imagePosition="bottom"
-    >
+    <ApartmentDetailLayout title="Emergency">
       <div className="flex items-start gap-3 rounded-2xl bg-stone-100 p-4 dark:bg-zinc-800">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-zinc-900">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="text-stone-600 dark:text-zinc-300">
@@ -60,6 +56,15 @@ export default function EmergencyPage() {
             You&apos;ll find it in the first wardrobe in the bedroom.
           </p>
         </div>
+      </div>
+
+      <div className="relative mt-4 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-200 dark:bg-zinc-800">
+        <Image
+          src="/emergency-extinguisher-v2.jpg"
+          alt="Fire extinguisher"
+          fill
+          className="object-cover object-bottom"
+        />
       </div>
 
       <div className="mt-8 grid grid-cols-3 gap-2">
