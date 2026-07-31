@@ -76,7 +76,8 @@ const items = [
           toiletries in the bathroom.
         </p>
         <p className="mt-3">
-          Need extra towels? You&apos;ll find them under the sink.
+          Staying for a few days? Feel free to grab extra towels from
+          under the sink if you need them.
         </p>
       </>
     ),
