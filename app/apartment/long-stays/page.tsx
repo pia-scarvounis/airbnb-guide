@@ -4,25 +4,16 @@ export default function LongStaysPage() {
   return (
     <ApartmentDetailLayout title="Long Stays">
       <p>
-        If you&apos;re staying for several days, here are a few extra
-        things that may be useful.
+        If you&apos;re staying for a week or longer, here are a few extra
+        things that may make your stay more comfortable.
       </p>
 
       <p className="mt-6 font-medium text-zinc-900 dark:text-zinc-50">
-        🌿 Plants
+        🛏️ Fresh bed linen
       </p>
       <p className="mt-2">
-        I&apos;d really appreciate it if you could water the plants once a
-        week during your stay, or whenever they look thirsty.
-      </p>
-
-      <p className="mt-6 font-medium text-zinc-900 dark:text-zinc-50">
-        🧺 Towels
-      </p>
-      <p className="mt-2">
-        If you&apos;re staying for several days, you&apos;re welcome to use
-        additional towels if needed. You&apos;ll find them under the sink
-        in the bathroom.
+        A spare set of bed linen is available in the wardrobe if you&apos;d
+        like to change the sheets during your stay.
       </p>
 
       <p className="mt-6 font-medium text-zinc-900 dark:text-zinc-50">
@@ -39,6 +30,14 @@ export default function LongStaysPage() {
       <p className="mt-3">
         Please feel free to use them if you&apos;d like to freshen up the
         apartment during your stay.
+      </p>
+
+      <p className="mt-6 font-medium text-zinc-900 dark:text-zinc-50">
+        🌿 Plants
+      </p>
+      <p className="mt-2">
+        I&apos;d really appreciate it if you could water the plants once a
+        week or whenever they look thirsty.
       </p>
     </ApartmentDetailLayout>
   );

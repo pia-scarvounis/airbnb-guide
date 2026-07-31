@@ -17,7 +17,7 @@ const items = [
     ),
   },
   {
-    label: "City Bikes",
+    label: "Available Oslo City Bikes",
     bg: "bg-emerald-100 dark:bg-emerald-900/30",
     fg: "text-emerald-600 dark:text-emerald-300",
     icon: (
@@ -29,7 +29,7 @@ const items = [
     ),
   },
   {
-    label: "E-scooters",
+    label: "Available e-scooters",
     bg: "bg-violet-100 dark:bg-violet-900/30",
     fg: "text-violet-600 dark:text-violet-300",
     icon: (
@@ -41,7 +41,7 @@ const items = [
     ),
   },
   {
-    label: "Weather",
+    label: "Current weather",
     bg: "bg-amber-100 dark:bg-amber-900/30",
     fg: "text-amber-600 dark:text-amber-300",
     icon: (
@@ -53,7 +53,7 @@ const items = [
     ),
   },
   {
-    label: "Shops, cafés & restaurants",
+    label: "Nearby shops",
     bg: "bg-stone-200 dark:bg-zinc-800",
     fg: "text-stone-600 dark:text-zinc-300",
     icon: (
@@ -81,11 +81,11 @@ export default function LocalInfoPage() {
         </Link>
 
         <h1 className={`${playfair.className} mt-4 text-6xl text-zinc-900 dark:text-zinc-50`}>
-          Local Kværnerbyen Info
+          Getting Around & Local Info
         </h1>
         <p className="mt-3 text-base text-stone-500 dark:text-zinc-400">
-          The official Kværnerbyen website provides live local information
-          throughout your stay.
+          This local website provides real-time information throughout
+          your stay in Kværnerbyen.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-6">
@@ -119,6 +119,25 @@ export default function LocalInfoPage() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5h6v6M19.5 4.5 10 14M6 6H4.5v13.5H18V18" />
           </svg>
         </a>
+
+        <div className="mt-6 flex items-start gap-3 rounded-2xl bg-stone-100 p-4 dark:bg-zinc-800">
+          <span className="text-lg">💡</span>
+          <div>
+            <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+              Transport Tip
+            </p>
+            <p className="mt-1 text-sm leading-6 text-stone-600 dark:text-zinc-300">
+              Download the Ruter app to buy tickets, plan your journey and
+              check live departures.
+            </p>
+            <p className="mt-3 text-sm leading-6 text-stone-600 dark:text-zinc-300">
+              Travelling to or from Oslo Airport (Gardermoen)? I recommend
+              taking the Vy local train instead of the Airport Express
+              (Flytoget). It usually costs less than half the price and
+              takes almost the same amount of time.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

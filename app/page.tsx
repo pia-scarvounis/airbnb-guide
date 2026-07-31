@@ -26,7 +26,7 @@ const categories: Category[] = [
     ),
   },
   {
-    label: "Local Kværnerbyen Info",
+    label: "Getting Around & Local Info",
     description: "Live neighborhood info",
     href: "/local-info",
     icon: (
