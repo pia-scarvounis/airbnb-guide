@@ -31,28 +31,13 @@ type Place = {
 
 const places: Place[] = [
   {
-    name: "BLÅ",
-    category: "Bars",
-    image: "/favorites-bla.jpg",
-    mapsQuery: "Blå Oslo",
-    directions: [
-      "🚶 45 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Møllerveien, then walk about 3 minutes.",
-    ],
+    name: "Kraft",
+    category: "Restaurants",
+    image: "/favorites-kraft.jpg",
+    mapsQuery: "Kraft Restaurant Oslo",
+    directions: ["🚶 3–4 min walk"],
     description:
-      "BLÅ is one of Oslo's most iconic live music venues, located along the Akerselva river. It's known for its diverse concert programme, featuring everything from jazz and electronic music to hip-hop and international artists. On Sundays, they host live concerts, and the surrounding area often comes alive with markets, food stalls and a lively atmosphere. It's the perfect place to experience Oslo's creative and alternative side, whether you're stopping by for a drink or a night of live music.",
-  },
-  {
-    name: "KUMI",
-    category: "Cafés",
-    image: "/favorites-kumi.jpg",
-    mapsQuery: "KUMI Oslobukta",
-    directions: [
-      "🚶 20–25 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 5 minutes.",
-    ],
-    description:
-      "KUMI is a beautiful organic café and restaurant serving modern vegetarian and vegan comfort food inspired by Japanese and Nordic flavours. It's one of my favourite places for brunch or lunch, with excellent coffee, fresh juices, mocktails and a carefully selected menu of wine, beer and cocktails. The bright interior and sunny outdoor seating in Oslobukta make it a perfect place to relax after exploring the Opera House and MUNCH Museum.",
+      "Kraft is a cozy neighbourhood restaurant just a few minutes from the apartment. It's a great choice for lunch or dinner, serving seasonal dishes made with fresh ingredients in a relaxed atmosphere. The menu changes regularly and often features traditional Norwegian home-style cooking alongside lighter lunch options. If you're looking for a good meal close to home, this is my favourite local restaurant.",
   },
   {
     name: "ZZ Pizza",
@@ -67,6 +52,15 @@ const places: Place[] = [
       "ZZ Pizza is one of my favourite pizza places in Oslo, serving authentic Neapolitan-style pizzas with airy, wood-fired crusts and high-quality ingredients. If you're not sure what to order, I highly recommend the Pancetta & Blue Cheese pizza or the Mushroom pizza - they're both favourites of mine. It's a great spot for lunch or dinner if you're craving authentic Italian pizza.",
   },
   {
+    name: "Smia Galleri",
+    category: "Restaurants",
+    image: "/favorites-smia-galleri.jpg",
+    mapsQuery: "Smia Galleri Oslo",
+    directions: ["🚶 10 min walk"],
+    description:
+      "Smia Galleri is one of my favourite neighbourhood restaurants, set in a beautifully restored former blacksmith's workshop. It's known for seasonal Nordic cuisine, a warm atmosphere and a charming courtyard that's especially lovely in the summer. Whether you're stopping by for lunch, dinner or a glass of wine, it's a hidden gem just a short walk from the apartment.",
+  },
+  {
     name: "Madonna",
     category: "Restaurants",
     image: "/favorites-madonna.jpg",
@@ -77,24 +71,6 @@ const places: Place[] = [
     ],
     description:
       "Madonna is one of my favourite restaurants in Oslo, located right next to the MUNCH Museum in Bjørvika. This modern bistro serves creative dishes inspired by flavours from around the world, using seasonal ingredients in a relaxed and welcoming setting. It's featured in the Michelin Guide, but still feels unpretentious and perfect for a long dinner with friends. In the summer, the outdoor seating is a great place to enjoy the evening.",
-  },
-  {
-    name: "Smia Galleri",
-    category: "Restaurants",
-    image: "/favorites-smia-galleri.jpg",
-    mapsQuery: "Smia Galleri Oslo",
-    directions: ["🚶 10 min walk"],
-    description:
-      "Smia Galleri is one of my favourite neighbourhood restaurants, set in a beautifully restored former blacksmith's workshop. It's known for seasonal Nordic cuisine, a warm atmosphere and a charming courtyard that's especially lovely in the summer. Whether you're stopping by for lunch, dinner or a glass of wine, it's a hidden gem just a short walk from the apartment.",
-  },
-  {
-    name: "Kraft",
-    category: "Restaurants",
-    image: "/favorites-kraft.jpg",
-    mapsQuery: "Kraft Restaurant Oslo",
-    directions: ["🚶 3–4 min walk"],
-    description:
-      "Kraft is a cozy neighbourhood restaurant just a few minutes from the apartment. It's a great choice for lunch or dinner, serving seasonal dishes made with fresh ingredients in a relaxed atmosphere. The menu changes regularly and often features traditional Norwegian home-style cooking alongside lighter lunch options. If you're looking for a good meal close to home, this is my favourite local restaurant.",
   },
   {
     name: "Delicatessen",
@@ -143,6 +119,18 @@ const places: Place[] = [
       "Kroloftet & Kruttverket is one of my favourite local spots and well worth the walk through Svartdalsparken. During the day, it's a cozy café serving excellent coffee and freshly baked pastries, while in the evenings it becomes a relaxed bar and cultural venue. They host live music, talks, workshops and community events throughout the year, including live jazz on many Sunday evenings. You can also book a sauna by the river, making it a perfect place to spend an afternoon or evening. For upcoming events and more information, visit their website.",
   },
   {
+    name: "KUMI",
+    category: "Cafés",
+    image: "/favorites-kumi.jpg",
+    mapsQuery: "KUMI Oslobukta",
+    directions: [
+      "🚶 20–25 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 5 minutes.",
+    ],
+    description:
+      "KUMI is a beautiful organic café and restaurant serving modern vegetarian and vegan comfort food inspired by Japanese and Nordic flavours. It's one of my favourite places for brunch or lunch, with excellent coffee, fresh juices, mocktails and a carefully selected menu of wine, beer and cocktails. The bright interior and sunny outdoor seating in Oslobukta make it a perfect place to relax after exploring the Opera House and MUNCH Museum.",
+  },
+  {
     name: "Hakone",
     category: "Cafés",
     image: "/favorites-hakone.jpg",
@@ -155,16 +143,52 @@ const places: Place[] = [
       "Hakone is one of my favourite coffee chains in Oslo, with several locations across the city. Inspired by Japanese coffee culture, it combines minimalist design with excellent specialty coffee and high-quality pastries. If you're looking for a quick coffee to go or a peaceful place to take a break, Hakone is always a great choice. Don't miss their popular pistachio croissant if it's available!",
   },
   {
-    name: "Oslofjord Sauna",
-    category: "Activities",
-    image: "/favorites-oslofjord-sauna.jpg",
-    mapsQuery: "Oslofjord Sauna, Sukkerbiten, Oslo",
+    name: "Hammerhai",
+    category: "Bars",
+    image: "/favorites-hammerhai.jpg",
+    mapsQuery: "Hammerhai Oslo",
     directions: [
       "🚶 30–35 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika. The sauna is a few minutes' walk from the bus stop.",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 5 minutes.",
     ],
     description:
-      "Oslofjord Sauna is one of Oslo's most unique experiences. Relax in a floating sauna before taking a refreshing dip in the Oslofjord. It's popular all year round, but especially during the winter months when the contrast between the hot sauna and the icy water is unforgettable. Remember to book in advance, especially on weekends.",
+      "Hammerhai is one of my favourite waterfront bars in Oslo. It's known for creative cocktails, colourful interiors and a relaxed atmosphere. During the summer, the outdoor seating by the Oslofjord is a great place for a drink in the sun, while evenings often feature DJs and a lively crowd.",
+  },
+  {
+    name: "Angst",
+    category: "Bars",
+    image: "/favorites-angst-v2.jpg",
+    mapsQuery: "Angst Bar Oslo",
+    directions: [
+      "🚶 30–35 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Storgata, then walk about 3 minutes.",
+    ],
+    description:
+      "Angst is one of my favourite bars in Oslo, known for its cozy atmosphere and laid-back vibe. It's a great place to start the evening with a drink, meet friends or simply enjoy the music and lively crowd. The outdoor seating is especially popular on warm summer evenings.",
+  },
+  {
+    name: "Himkok",
+    category: "Bars",
+    image: "/favorites-himkok.jpg",
+    mapsQuery: "Himkok Oslo",
+    directions: [
+      "🚶 35–40 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Storgata, then walk about 2 minutes.",
+    ],
+    description:
+      "Himkok is one of Oslo's most iconic cocktail bars and regularly ranked among the best in the world. The award-winning Distillery Bar on the ground floor serves cocktails made with spirits distilled on-site. It's very popular, so booking a table in advance is recommended. Upstairs, you'll find a larger bar with a livelier atmosphere that turns into more of a nightclub later in the evening.",
+  },
+  {
+    name: "BLÅ",
+    category: "Bars",
+    image: "/favorites-bla-v2.jpg",
+    mapsQuery: "Blå Oslo",
+    directions: [
+      "🚶 45 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Møllerveien, then walk about 3 minutes.",
+    ],
+    description:
+      "BLÅ is one of Oslo's most iconic live music venues, located along the Akerselva river. It's known for its diverse concert programme, featuring everything from jazz and electronic music to hip-hop and international artists. On Sundays, they host live concerts, and the surrounding area often comes alive with markets, food stalls and a lively atmosphere. It's the perfect place to experience Oslo's creative and alternative side, whether you're stopping by for a drink or a night of live music.",
   },
   {
     name: "Botanical Garden",
@@ -177,6 +201,18 @@ const places: Place[] = [
     ],
     description:
       "Botanical Garden is one of Oslo's most beautiful green spaces and a perfect place for a relaxing walk. With thousands of plants from around the world, peaceful ponds and colourful seasonal flowers, it's a lovely escape from the city. Entry is free all year round.",
+  },
+  {
+    name: "Oslofjord Sauna",
+    category: "Activities",
+    image: "/favorites-oslofjord-sauna.jpg",
+    mapsQuery: "Oslofjord Sauna, Sukkerbiten, Oslo",
+    directions: [
+      "🚶 30–35 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika. The sauna is a few minutes' walk from the bus stop.",
+    ],
+    description:
+      "Oslofjord Sauna is one of Oslo's most unique experiences. Relax in a floating sauna before taking a refreshing dip in the Oslofjord. It's popular all year round, but especially during the winter months when the contrast between the hot sauna and the icy water is unforgettable. Remember to book in advance, especially on weekends.",
   },
   {
     name: "Ekebergparken",
@@ -200,42 +236,6 @@ const places: Place[] = [
     ],
     description:
       "A winter favourite! Korketrekkeren is one of Oslo's most popular winter activities. Rent a sled (or bring your own) and enjoy a thrilling 2 km ride through the forest down to Midtstuen. From there, simply take the metro back to Frognerseteren and do it all over again. Sleds and helmets can be rented near Frognerseteren station, and it's completely free if you bring your own sled. The run is open whenever there's enough snow, making it a fun experience for both families and adults.",
-  },
-  {
-    name: "Hammerhai",
-    category: "Bars",
-    image: "/favorites-hammerhai.jpg",
-    mapsQuery: "Hammerhai Oslo",
-    directions: [
-      "🚶 30–35 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 5 minutes.",
-    ],
-    description:
-      "Hammerhai is one of my favourite waterfront bars in Oslo. It's known for creative cocktails, colourful interiors and a relaxed atmosphere. During the summer, the outdoor seating by the Oslofjord is a great place for a drink in the sun, while evenings often feature DJs and a lively crowd.",
-  },
-  {
-    name: "Himkok",
-    category: "Bars",
-    image: "/favorites-himkok.jpg",
-    mapsQuery: "Himkok Oslo",
-    directions: [
-      "🚶 35–40 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Storgata, then walk about 2 minutes.",
-    ],
-    description:
-      "Himkok is one of Oslo's most iconic cocktail bars and regularly ranked among the best in the world. The award-winning Distillery Bar on the ground floor serves cocktails made with spirits distilled on-site. It's very popular, so booking a table in advance is recommended. Upstairs, you'll find a larger bar with a livelier atmosphere that turns into more of a nightclub later in the evening.",
-  },
-  {
-    name: "Angst",
-    category: "Bars",
-    image: "/favorites-angst-v2.jpg",
-    mapsQuery: "Angst Bar Oslo",
-    directions: [
-      "🚶 30–35 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Storgata, then walk about 3 minutes.",
-    ],
-    description:
-      "Angst is one of my favourite bars in Oslo, known for its cozy atmosphere and laid-back vibe. It's a great place to start the evening with a drink, meet friends or simply enjoy the music and lively crowd. The outdoor seating is especially popular on warm summer evenings.",
   },
 ];
 
