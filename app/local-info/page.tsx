@@ -103,11 +103,6 @@ export default function LocalInfoPage() {
           ))}
         </div>
 
-        <p className="mt-8 text-sm leading-6 text-stone-600 dark:text-zinc-300">
-          The information is updated automatically, making it the easiest
-          way to stay up to date during your visit.
-        </p>
-
         <a
           href="https://kvbyen.no/"
           target="_blank"
