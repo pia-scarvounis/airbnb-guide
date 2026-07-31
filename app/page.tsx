@@ -54,39 +54,39 @@ const categories: Category[] = [
 export default function Home() {
   return (
     <div className="flex min-h-dvh flex-1 flex-col bg-white dark:bg-black">
-      <div className="mx-auto flex w-full flex-1 flex-col md:max-w-xl">
+      <div className="mx-auto flex w-full flex-1 flex-col">
         <section className="relative flex flex-1 flex-col">
           {/* Hero */}
-          <div className="relative mx-6 mt-6 min-h-[50dvh] flex-1 overflow-hidden rounded-3xl px-7 pb-20 pt-[max(2.5rem,calc(env(safe-area-inset-top)+1rem))] text-white">
+          <div className="relative mx-6 mt-6 min-h-[50dvh] max-h-[640px] flex-1 overflow-hidden rounded-3xl px-7 pb-20 pt-[max(4rem,calc(env(safe-area-inset-top)+2.5rem))] text-white">
             <Image
-              src="/hero-courtyard.jpg"
+              src="/hero-courtyard-v2.jpg"
               alt=""
               fill
               priority
               sizes="(max-width: 768px) 100vw, 576px"
-              className="object-cover"
+              className="object-cover object-top"
             />
             <div
               aria-hidden
               className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/90"
             />
-            <div className="relative">
+            <div className="relative mx-auto flex h-full w-full max-w-2xl flex-col">
               <h1
-                className={`${playfair.className} max-w-[14ch] text-4xl leading-[1.15]`}
+                className={`${playfair.className} max-w-[14ch] text-4xl leading-[1.15] sm:max-w-[18ch] sm:text-5xl md:text-6xl`}
               >
                 Welcome to my home in Kværnerbyen
               </h1>
-              <p className="mt-4 max-w-xs text-sm leading-6 text-zinc-200">
+              <p className="mt-6 max-w-xs text-sm leading-7 text-zinc-200 sm:max-w-sm sm:text-base md:max-w-md">
                 Here you&apos;ll find everything you need to know about the
                 apartment, from practical information to my personal
                 recommendations for places to eat, drink, and explore.
               </p>
-              <p className="mt-3 max-w-xs text-sm leading-6 text-zinc-200">
+              <p className="mt-5 max-w-xs text-sm leading-7 text-zinc-200 sm:max-w-sm sm:text-base md:max-w-md">
                 Make yourself at home, and please don&apos;t hesitate to get
                 in touch if you have any questions.
               </p>
               <p
-                className={`${dancingScript.className} mt-8 flex items-center gap-1.5 text-2xl text-white`}
+                className={`${dancingScript.className} mt-auto flex items-center gap-1.5 pt-6 text-2xl text-white sm:text-3xl`}
               >
                 Pia
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
@@ -105,13 +105,13 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-4">
             {categories.map((category) => {
               const className =
-                "flex w-16 flex-col items-center gap-2 text-center";
+                "flex w-20 flex-col items-center gap-2 text-center";
               const content = (
                 <>
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-100 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-800 dark:group-hover:bg-zinc-700">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-zinc-100 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-800 dark:group-hover:bg-zinc-700">
                     <svg
-                      width="22"
-                      height="22"
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -121,7 +121,7 @@ export default function Home() {
                       {category.icon}
                     </svg>
                   </span>
-                  <span className="text-xs font-medium leading-4 text-zinc-600 dark:text-zinc-300">
+                  <span className="text-sm font-medium leading-4 text-zinc-600 dark:text-zinc-300">
                     {category.label}
                   </span>
                 </>
