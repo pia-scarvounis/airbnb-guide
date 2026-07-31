@@ -141,10 +141,10 @@ const items = [
         <p>
           The TV is connected to <strong className={bold}>Apple TV</strong>.
         </p>
-        <ul className="mt-3 list-disc space-y-1.5 pl-5">
-          <li>Use my streaming services, or sign in with your own.</li>
-          <li>Just remember to sign out before you leave.</li>
-        </ul>
+        <p className="mt-2">
+          Use my streaming services, or sign in with your own - just
+          remember to sign out before you leave.
+        </p>
       </>
     ),
   },
