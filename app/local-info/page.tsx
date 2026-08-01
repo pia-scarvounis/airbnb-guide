@@ -53,7 +53,7 @@ const items = [
     ),
   },
   {
-    label: "Nearby shops",
+    label: "Nearby shops (opening hours)",
     bg: "bg-stone-200 dark:bg-zinc-800",
     fg: "text-stone-600 dark:text-zinc-300",
     icon: (
