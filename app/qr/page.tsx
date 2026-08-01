@@ -33,19 +33,19 @@ export default function QrPage() {
         Print / Save as PDF
       </button>
 
-      <div className="flex w-[210mm] min-h-[297mm] flex-col items-center justify-center bg-white p-16 text-center shadow-2xl shadow-black/10 print:h-[297mm] print:min-h-0 print:w-full print:p-16 print:shadow-none">
+      <div className="flex w-[210mm] min-h-[297mm] flex-col items-center justify-center bg-white p-12 text-center shadow-2xl shadow-black/10 print:h-[297mm] print:min-h-0 print:w-full print:p-12 print:shadow-none">
         <p className="text-xs font-semibold tracking-[0.25em] text-stone-400">
           GUEST GUIDE
         </p>
-        <h1 className={`${playfair.className} mt-5 max-w-sm text-4xl leading-tight text-zinc-900`}>
+        <h1 className={`${playfair.className} mt-4 max-w-sm text-4xl leading-tight text-zinc-900`}>
           Welcome to my home in Kværnerbyen
         </h1>
-        <p className="mt-4 max-w-xs text-base leading-7 text-stone-500">
+        <p className="mt-3 max-w-xs text-base leading-7 text-stone-500">
           Scan the code below to open your guest guide - WiFi, house
-          essentials, and my personal recommendations for the neighbourhood.
+          essentials, and my personal recommendations for Oslo.
         </p>
 
-        <div className="mt-14 rounded-[2rem] border border-stone-200 bg-white p-10">
+        <div className="mt-10 rounded-[2rem] border border-stone-200 bg-white p-10">
           <QRCode
             value={GUIDE_URL}
             size={260}
@@ -54,11 +54,11 @@ export default function QrPage() {
           />
         </div>
 
-        <p className="mt-8 text-sm tracking-wide text-stone-400">
+        <p className="mt-6 text-sm tracking-wide text-stone-400">
           {GUIDE_URL}
         </p>
 
-        <p className={`${dancingScript.className} mt-16 text-3xl text-zinc-900`}>
+        <p className={`${dancingScript.className} mt-10 text-3xl text-zinc-900`}>
           Pia ♡
         </p>
       </div>

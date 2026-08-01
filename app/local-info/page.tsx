@@ -103,18 +103,6 @@ export default function LocalInfoPage() {
           ))}
         </div>
 
-        <a
-          href="https://kvbyen.no/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
-        >
-          Open KVBYEN
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5h6v6M19.5 4.5 10 14M6 6H4.5v13.5H18V18" />
-          </svg>
-        </a>
-
         <div className="mt-6 flex items-start gap-3 rounded-2xl bg-stone-100 p-4 dark:bg-zinc-800">
           <span className="text-lg">💡</span>
           <div>
@@ -133,6 +121,18 @@ export default function LocalInfoPage() {
             </p>
           </div>
         </div>
+
+        <a
+          href="https://kvbyen.no/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+        >
+          Open KVBYEN
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5h6v6M19.5 4.5 10 14M6 6H4.5v13.5H18V18" />
+          </svg>
+        </a>
       </div>
     </div>
   );

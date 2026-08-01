@@ -83,6 +83,33 @@ const items = [
     ),
   },
   {
+    title: "Windows",
+    bg: "bg-sky-100 dark:bg-sky-900/30",
+    fg: "text-sky-700 dark:text-sky-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 3.75h15v16.5h-15V3.75ZM4.5 12h15M12 3.75v16.5"
+      />
+    ),
+    body: (
+      <>
+        <p>The windows have a child safety catch.</p>
+        <p className="mt-2">
+          To open them fully, gently lift the small{" "}
+          <strong className={bold}>black metal latch</strong> on the
+          right-hand side of the window while opening it. Once released,
+          the window can open all the way.
+        </p>
+        <p className="mt-2">
+          Please don&apos;t force the window if it doesn&apos;t open
+          immediately - the latch needs to be lifted first.
+        </p>
+      </>
+    ),
+  },
+  {
     title: "Cooking",
     bg: "bg-orange-100 dark:bg-orange-900/30",
     fg: "text-orange-700 dark:text-orange-300",
@@ -146,6 +173,48 @@ const items = [
           remember to sign out before you leave.
         </p>
       </>
+    ),
+  },
+  {
+    title: "Shoes indoors",
+    bg: "bg-rose-100 dark:bg-rose-900/30",
+    fg: "text-rose-700 dark:text-rose-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3.75 16.5h16.5v2.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V16.5ZM3.75 16.5c0-3 1.5-4.5 3.75-6 1.5-1 2.25-2.25 2.625-3.375.198-.594.897-.816 1.42-.463C13.313 7.85 15 9.276 15 10.5c1.5 0 3.75.75 5.25 3v3"
+      />
+    ),
+    body: (
+      <>
+        <p>
+          In Norway, it&apos;s customary to remove your shoes when entering
+          a home.
+        </p>
+        <p className="mt-2">
+          This helps keep the apartment clean and protects the wooden
+          floors - thank you for helping me take care of my home.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Wooden coffee table",
+    bg: "bg-teal-100 dark:bg-teal-900/30",
+    fg: "text-teal-700 dark:text-teal-300",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3.75 9h16.5M6 9v10.5M18 9v10.5M3 20.25h18M9 4.5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 4.5V9H9V4.5Z"
+      />
+    ),
+    body: (
+      <p>
+        Please use coasters or placemats on the wooden table in the living
+        room to help protect the surface.
+      </p>
     ),
   },
 ];
