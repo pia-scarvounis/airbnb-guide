@@ -33,7 +33,7 @@ const places: Place[] = [
   {
     name: "Kraft",
     category: "Restaurants",
-    image: "/favorites-kraft.jpg",
+    image: "/favorites-kraft-v2.jpg",
     mapsQuery: "Kraft Restaurant Oslo",
     directions: ["🚶 3–4 min walk"],
     description:
@@ -117,6 +117,15 @@ const places: Place[] = [
     ],
     description:
       "Kroloftet & Kruttverket is one of my favourite local spots and well worth the walk through Svartdalsparken. During the day, it's a cozy café serving excellent coffee and freshly baked pastries, while in the evenings it becomes a relaxed bar and cultural venue. They host live music, talks, workshops and community events throughout the year, including live jazz on many Sunday evenings. You can also book a sauna by the river, making it a perfect place to spend an afternoon or evening. For upcoming events and more information, visit their website.",
+  },
+  {
+    name: "Tim Wendelboe",
+    category: "Cafés",
+    image: "/favorites-tim-wendelboe.jpg",
+    mapsQuery: "Tim Wendelboe Oslo",
+    directions: ["🚌 Take bus 54 to Møllerveien, then walk 10 minutes."],
+    description:
+      "If you're serious about coffee, this is one of the best places to visit in Oslo. Tim Wendelboe is world-renowned for its award-winning coffee and relaxed, minimalist atmosphere. It's a small café with a big reputation, perfect for a carefully brewed filter coffee or espresso.",
   },
   {
     name: "KUMI",
@@ -229,13 +238,36 @@ const places: Place[] = [
   {
     name: "Korketrekkeren",
     category: "Activities",
-    image: "/favorites-korketrekkeren.jpg",
+    image: "/favorites-korketrekkeren-v2.jpg",
     mapsQuery: "Korketrekkeren Oslo",
     directions: [
       "🚌 Take bus 54 towards Jernbanetorget. From Jernbanetorget, take Metro Line 1 to Frognerseteren. The toboggan run starts just below the metro station.",
     ],
     description:
       "A winter favourite! Korketrekkeren is one of Oslo's most popular winter activities. Rent a sled (or bring your own) and enjoy a thrilling 2 km ride through the forest down to Midtstuen. From there, simply take the metro back to Frognerseteren and do it all over again. Sleds and helmets can be rented near Frognerseteren station, and it's completely free if you bring your own sled. The run is open whenever there's enough snow, making it a fun experience for both families and adults.",
+  },
+  {
+    name: "Oslo Summer Park (Skimore Oslo Climbing Park)",
+    category: "Activities",
+    image: "/favorites-oslo-summer-park.jpg",
+    mapsQuery: "Skimore Oslo Climbing Park",
+    directions: [
+      "🚌 Take bus 54 to Jernbanetorget, then Metro Line 1 (Frognerseteren) to Voksenkollen or Tryvann, followed by a short walk.",
+    ],
+    description:
+      "Climbing park in Tryvann and one of Scandinavia's largest, with nine courses and over 150 obstacles high up in the trees. Whether you're visiting with family or looking for a fun challenge, you'll find everything from beginner courses to thrilling zip-lines and routes up to 20 metres above the ground.",
+  },
+  {
+    name: "Oslo Winter Park (Skimore Oslo)",
+    category: "Activities",
+    image: "/favorites-oslo-winter-park.jpg",
+    mapsQuery: "Skimore Oslo",
+    directions: [
+      "🚌 Take bus 54 to Jernbanetorget, then Metro Line 1 (Frognerseteren) to Voksenkollen or Tryvann, followed by a short walk.",
+      "❄️ In winter, a connecting Ruter bus runs from Voksenkollen metro station up to Skimore Oslo (Tryvann) - every other train on weekdays, every train on weekends. Without the bus, it's about a 15-minute walk up to the resort.",
+    ],
+    description:
+      "Ski resort in Tryvann and Oslo's largest, with 18 slopes and 11 lifts offering runs for both beginners and experienced skiers. Many slopes are floodlit in the evenings, making it a great place for night skiing. Ski and snowboard equipment can be rented on-site.",
   },
 ];
 
