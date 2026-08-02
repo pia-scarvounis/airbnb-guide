@@ -6,8 +6,8 @@ const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600"] });
 const items = [
   {
     label: "Bus departures",
-    bg: "bg-rose-100 dark:bg-rose-900/30",
-    fg: "text-rose-600 dark:text-rose-300",
+    description: "See live bus times near you.",
+    fg: "text-rose-500 dark:text-rose-300",
     icon: (
       <path
         strokeLinecap="round"
@@ -17,9 +17,9 @@ const items = [
     ),
   },
   {
-    label: "Available Oslo City Bikes",
-    bg: "bg-emerald-100 dark:bg-emerald-900/30",
-    fg: "text-emerald-600 dark:text-emerald-300",
+    label: "Oslo City Bikes",
+    description: "Check bike availability and stations.",
+    fg: "text-emerald-500 dark:text-emerald-300",
     icon: (
       <path
         strokeLinecap="round"
@@ -29,9 +29,9 @@ const items = [
     ),
   },
   {
-    label: "Available e-scooters",
-    bg: "bg-violet-100 dark:bg-violet-900/30",
-    fg: "text-violet-600 dark:text-violet-300",
+    label: "E-scooters",
+    description: "Find available e-scooters nearby.",
+    fg: "text-violet-500 dark:text-violet-300",
     icon: (
       <path
         strokeLinecap="round"
@@ -42,8 +42,8 @@ const items = [
   },
   {
     label: "Current weather",
-    bg: "bg-amber-100 dark:bg-amber-900/30",
-    fg: "text-amber-600 dark:text-amber-300",
+    description: "See the latest weather forecast in Oslo.",
+    fg: "text-amber-500 dark:text-amber-300",
     icon: (
       <path
         strokeLinecap="round"
@@ -53,9 +53,9 @@ const items = [
     ),
   },
   {
-    label: "Nearby shops (opening hours)",
-    bg: "bg-stone-200 dark:bg-zinc-800",
-    fg: "text-stone-600 dark:text-zinc-300",
+    label: "Nearby shops",
+    description: "Check opening hours for shops near you.",
+    fg: "text-stone-500 dark:text-zinc-300",
     icon: (
       <path
         strokeLinecap="round"
@@ -88,30 +88,47 @@ export default function LocalInfoPage() {
           your stay in Kværnerbyen.
         </p>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-6">
+        <div className="mt-8 flex items-center gap-3">
+          <span className="h-px flex-1 bg-stone-200 dark:bg-zinc-800" />
+          <span className="text-xs font-semibold tracking-widest text-stone-400 dark:text-zinc-500">
+            LOCAL INFO AT A GLANCE
+          </span>
+          <span className="h-px flex-1 bg-stone-200 dark:bg-zinc-800" />
+        </div>
+
+        <div className="mt-6 grid grid-cols-5 gap-x-2 gap-y-4">
           {items.map((item) => (
-            <div key={item.label} className="flex w-20 flex-col items-center gap-2 text-center">
-              <span className={`flex h-14 w-14 items-center justify-center rounded-full ${item.bg}`}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={item.fg}>
-                  {item.icon}
-                </svg>
-              </span>
-              <span className="text-xs font-medium leading-4 text-zinc-700 dark:text-zinc-300">
+            <div key={item.label} className="flex flex-col items-center gap-2 text-center">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={item.fg}>
+                {item.icon}
+              </svg>
+              <span className="text-xs font-semibold leading-4 text-zinc-800 dark:text-zinc-100">
                 {item.label}
+              </span>
+              <span className="text-[11px] leading-4 text-stone-500 dark:text-zinc-400">
+                {item.description}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 flex items-start gap-3 rounded-2xl bg-stone-100 p-4 dark:bg-zinc-800">
+        <div className="mt-8 flex items-start gap-3 rounded-2xl bg-stone-100 p-4 dark:bg-zinc-800">
           <span className="text-lg">💡</span>
           <div>
             <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
               Transport Tip
             </p>
             <p className="mt-1 text-sm leading-6 text-stone-600 dark:text-zinc-300">
-              Download the Ruter app to buy tickets, plan your journey and
-              check live departures.
+              Download the{" "}
+              <a
+                href="https://ruter.no/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-50"
+              >
+                Ruter app
+              </a>{" "}
+              to buy tickets, plan your journey and check live departures.
             </p>
             <p className="mt-3 text-sm leading-6 text-stone-600 dark:text-zinc-300">
               Travelling to or from Oslo Airport (Gardermoen)? I recommend

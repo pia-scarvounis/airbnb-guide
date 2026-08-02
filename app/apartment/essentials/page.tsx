@@ -129,6 +129,10 @@ const items = [
             <strong className={bold}>inside the oven</strong>.
           </li>
           <li>Extra cookware is under the sink.</li>
+          <li>
+            Please wash frying pans <strong className={bold}>by hand</strong> -
+            not in the dishwasher.
+          </li>
         </ul>
 
         <p className={`mt-5 ${bold}`}>Using the frying pan</p>
