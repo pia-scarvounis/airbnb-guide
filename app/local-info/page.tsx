@@ -119,16 +119,25 @@ export default function LocalInfoPage() {
               Transport Tip
             </p>
             <p className="mt-1 text-sm leading-6 text-stone-600 dark:text-zinc-300">
-              Download the{" "}
+              Download the Ruter app (
               <a
-                href="https://ruter.no/en"
+                href="https://apps.apple.com/no/app/ruter/id993620197?l=nb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-50"
               >
-                Ruter app
+                iOS
               </a>{" "}
-              to buy tickets, plan your journey and check live departures.
+              /{" "}
+              <a
+                href="https://play.google.com/store/apps/details?id=no.ruter.reise"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-50"
+              >
+                Android
+              </a>
+              ) to buy tickets, plan your journey and check live departures.
             </p>
             <p className="mt-3 text-sm leading-6 text-stone-600 dark:text-zinc-300">
               Travelling to or from Oslo Airport (Gardermoen)? I recommend
