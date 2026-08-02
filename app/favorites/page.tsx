@@ -23,6 +23,7 @@ type Place = {
   time?: string;
   directions?: string[];
   description: string;
+  recommendations?: { name: string; description: string; mapsQuery?: string }[];
   tip?: string;
   image?: string;
   mapsQuery?: string;
@@ -200,6 +201,37 @@ const places: Place[] = [
       "BLÅ is one of Oslo's most iconic live music venues, located along the Akerselva river. It's known for its diverse concert programme, featuring everything from jazz and electronic music to hip-hop and international artists. On Sundays, they host live concerts, and the surrounding area often comes alive with markets, food stalls and a lively atmosphere. It's the perfect place to experience Oslo's creative and alternative side, whether you're stopping by for a drink or a night of live music.",
   },
   {
+    name: "Oslo Islands",
+    category: "Activities",
+    image: "/favorites-oslo-islands-v2.jpg",
+    mapsQuery: "Aker Brygge, Oslo",
+    directions: [
+      "🚌 Take bus 70 from Kværner to Nationaltheatret, then walk about 5 minutes to Aker Brygge, where the island ferries depart.",
+    ],
+    description:
+      "One of my favourite things to do in Oslo is visiting the islands in the Oslo Fjord. They're perfect for a relaxing day surrounded by nature, whether you want to go for a walk, have a picnic, swim, or simply enjoy the peaceful atmosphere. They're worth visiting from spring through autumn. The island ferries are part of the Ruter public transport system, so you can use a regular bus ticket - no extra ferry ticket is needed. You can also hop on and off the ferries to explore several islands in one day.",
+    recommendations: [
+      {
+        name: "Hovedøya",
+        mapsQuery: "Hovedøya, Oslo",
+        description:
+          "Beautiful walking trails, historic ruins, swimming spots and a cosy café.",
+      },
+      {
+        name: "Gressholmen",
+        mapsQuery: "Gressholmen, Oslo",
+        description:
+          "Peaceful island with scenic walking paths and a charming waterfront café/restaurant.",
+      },
+      {
+        name: "Langøyene",
+        mapsQuery: "Langøyene, Oslo",
+        description:
+          "A large island with one of Oslo's best sandy beaches, plenty of space and great for families with children.",
+      },
+    ],
+  },
+  {
     name: "Botanical Garden",
     category: "Activities",
     image: "/favorites-botanical-garden.jpg",
@@ -322,6 +354,37 @@ function PlaceCard({ place }: { place: Place }) {
             {place.description}
           </p>
         </div>
+
+        {place.recommendations && (
+          <div className="mt-4">
+            <p className="text-xs font-semibold tracking-widest text-stone-400 dark:text-zinc-500">
+              MY RECOMMENDATIONS
+            </p>
+            <ul className="mt-2 space-y-2">
+              {place.recommendations.map((rec) => (
+                <li key={rec.name} className="text-sm leading-6 text-stone-600 dark:text-zinc-300">
+                  <span className="font-medium text-zinc-900 dark:text-zinc-50">
+                    {rec.name}
+                  </span>{" "}
+                  - {rec.description}
+                  {rec.mapsQuery && (
+                    <>
+                      {" "}
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(rec.mapsQuery)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="whitespace-nowrap font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-50"
+                      >
+                        View on map
+                      </a>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {place.tip && (
           <div className="mt-4 flex items-start gap-3 rounded-xl bg-stone-100 p-3 dark:bg-zinc-800">
