@@ -379,7 +379,7 @@ export default function EssentialsPage() {
                 },
                 {
                   title: "Used towels",
-                  description: "Leave used towels on the bathroom floor.",
+                  description: "Leave used towels in the bathroom.",
                   bg: "bg-amber-50 dark:bg-amber-900/20",
                   fg: "text-amber-700 dark:text-amber-300",
                   icon: (
@@ -400,6 +400,32 @@ export default function EssentialsPage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M4.5 3.75h15v16.5h-15V3.75ZM4.5 12h15M12 3.75v16.5"
+                    />
+                  ),
+                },
+                {
+                  title: "Lights",
+                  description: "Turn off the lights.",
+                  bg: "bg-yellow-50 dark:bg-yellow-900/20",
+                  fg: "text-yellow-700 dark:text-yellow-300",
+                  icon: (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 3.75a5.25 5.25 0 0 0-3.128 9.464c.415.312.628.812.628 1.34v.696a1.5 1.5 0 0 0 1.5 1.5h2a1.5 1.5 0 0 0 1.5-1.5v-.696c0-.528.213-1.028.628-1.34A5.25 5.25 0 0 0 12 3.75ZM9.75 19.5h4.5"
+                    />
+                  ),
+                },
+                {
+                  title: "Dishes",
+                  description: "Put any dirty dishes in the dishwasher.",
+                  bg: "bg-violet-50 dark:bg-violet-900/20",
+                  fg: "text-violet-700 dark:text-violet-300",
+                  icon: (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 3.75h15v16.5h-15V3.75ZM7.5 6.75h.008M9.75 6.75h.008M12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
                     />
                   ),
                 },
