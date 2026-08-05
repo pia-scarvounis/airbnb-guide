@@ -391,8 +391,8 @@ export default function EssentialsPage() {
                   ),
                 },
                 {
-                  title: "Windows",
-                  description: "Close all windows.",
+                  title: "Windows & balcony door",
+                  description: "Close all windows and lock the balcony door.",
                   bg: "bg-sky-50 dark:bg-sky-900/20",
                   fg: "text-sky-700 dark:text-sky-300",
                   icon: (
@@ -426,19 +426,6 @@ export default function EssentialsPage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M4.5 3.75h15v16.5h-15V3.75ZM7.5 6.75h.008M9.75 6.75h.008M12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
-                    />
-                  ),
-                },
-                {
-                  title: "Balcony door",
-                  description: "Lock the balcony door.",
-                  bg: "bg-amber-50 dark:bg-amber-900/20",
-                  fg: "text-amber-700 dark:text-amber-300",
-                  icon: (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6.75 3.75h9v16.5h-9zM15.75 12h1.5"
                     />
                   ),
                 },
