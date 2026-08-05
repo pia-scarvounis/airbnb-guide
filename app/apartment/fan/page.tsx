@@ -13,23 +13,20 @@ export default function FanPage() {
       </p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5">
         <li>Press Power to turn the fan on or off.</li>
-        <li>Adjust the airflow using the + / − buttons (12 speed levels).</li>
+        <li>Use the + / − buttons to choose between 12 speed levels.</li>
         <li>
-          Press the Horizontal or Vertical Oscillation buttons to make the
-          fan move from side to side or up and down.
+          Press the oscillation button to make the fan move from side to
+          side.
         </li>
         <li>
-          Press ECO to let the fan automatically adjust its speed based on
-          the room temperature.
+          To direct the airflow higher or lower, gently adjust the fan head
+          by hand.
         </li>
-        <li>
-          Use the Timer if you would like the fan to turn off automatically
-          after a set number of hours.
-        </li>
+        <li>Use the Timer to set the fan to turn off automatically.</li>
       </ul>
 
-      <div className="relative mt-4 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-200 dark:bg-zinc-800">
-        <Image src="/apartment-fan.jpg" alt="Fan" fill className="object-cover object-top" />
+      <div className="relative mt-4 aspect-[4/5] w-full overflow-hidden rounded-2xl bg-stone-50 dark:bg-zinc-800">
+        <Image src="/apartment-fan-v2.jpg" alt="Fan" fill className="object-contain p-3" />
       </div>
 
       <p className="mt-4">
