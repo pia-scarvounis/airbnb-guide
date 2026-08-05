@@ -12,15 +12,15 @@ export default function FanPage() {
         How to use it:
       </p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5">
-        <li>Press Power to turn the fan on or off.</li>
+        <li>Press the Power button to turn the fan on or off.</li>
         <li>Use the + / − buttons to choose between 12 speed levels.</li>
         <li>
-          Press the oscillation button to make the fan move from side to
-          side.
+          Press the horizontal oscillation button to make the fan move
+          from side to side.
         </li>
         <li>
-          To direct the airflow higher or lower, gently adjust the fan head
-          by hand.
+          Press the vertical oscillation button to make the fan move up
+          and down.
         </li>
         <li>Use the Timer to set the fan to turn off automatically.</li>
       </ul>
