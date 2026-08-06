@@ -25,6 +25,7 @@ export default function EssentialsPage() {
 
   const items = [
     {
+      section: "Arrival",
       title: "Check-in & Check-out",
       bg: "bg-violet-100 dark:bg-violet-900/30",
       fg: "text-violet-700 dark:text-violet-300",
@@ -73,6 +74,7 @@ export default function EssentialsPage() {
       ),
     },
     {
+      section: "Good to Know",
       title: "Private belongings",
       bg: "bg-amber-100 dark:bg-amber-900/30",
       fg: "text-amber-700 dark:text-amber-300",
@@ -101,30 +103,6 @@ export default function EssentialsPage() {
       ),
     },
     {
-      title: "Shoes indoors",
-      bg: "bg-rose-100 dark:bg-rose-900/30",
-      fg: "text-rose-700 dark:text-rose-300",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3.75 16.5h16.5v2.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V16.5ZM3.75 16.5c0-3 1.5-4.5 3.75-6 1.5-1 2.25-2.25 2.625-3.375.198-.594.897-.816 1.42-.463C13.313 7.85 15 9.276 15 10.5c1.5 0 3.75.75 5.25 3v3"
-        />
-      ),
-      body: (
-        <>
-          <p>
-            In Norway, it&apos;s customary to remove your shoes when entering
-            a home.
-          </p>
-          <p className="mt-2">
-            This helps keep the apartment clean and protects the wooden
-            floors - thank you for helping me take care of my home.
-          </p>
-        </>
-      ),
-    },
-    {
       title: "Bathroom",
       bg: "bg-emerald-100 dark:bg-emerald-900/30",
       fg: "text-emerald-700 dark:text-emerald-300",
@@ -144,6 +122,30 @@ export default function EssentialsPage() {
           <p className="mt-3">
             Staying for a few days? Feel free to grab extra towels from
             under the sink if you need them.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "Pillows",
+      bg: "bg-teal-100 dark:bg-teal-900/30",
+      fg: "text-teal-700 dark:text-teal-300",
+      icon: (
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4.5 9.75a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v4.5a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-4.5Z"
+        />
+      ),
+      body: (
+        <>
+          <p>
+            You&apos;ll find two extra pillows and pillowcases in the{" "}
+            <strong className={bold}>wardrobe</strong>.
+          </p>
+          <p className="mt-2">
+            The extra pillows are a little larger than the ones on the bed,
+            in case you prefer a bigger pillow.
           </p>
         </>
       ),
@@ -272,6 +274,31 @@ export default function EssentialsPage() {
       ),
     },
     {
+      section: "House Guidelines",
+      title: "Shoes indoors",
+      bg: "bg-rose-100 dark:bg-rose-900/30",
+      fg: "text-rose-700 dark:text-rose-300",
+      icon: (
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 16.5h16.5v2.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V16.5ZM3.75 16.5c0-3 1.5-4.5 3.75-6 1.5-1 2.25-2.25 2.625-3.375.198-.594.897-.816 1.42-.463C13.313 7.85 15 9.276 15 10.5c1.5 0 3.75.75 5.25 3v3"
+        />
+      ),
+      body: (
+        <>
+          <p>
+            In Norway, it&apos;s customary to remove your shoes when entering
+            a home.
+          </p>
+          <p className="mt-2">
+            This helps keep the apartment clean and protects the wooden
+            floors - thank you for helping me take care of my home.
+          </p>
+        </>
+      ),
+    },
+    {
       title: "Smoking",
       bg: "bg-emerald-100 dark:bg-emerald-900/30",
       fg: "text-emerald-700 dark:text-emerald-300",
@@ -304,21 +331,29 @@ export default function EssentialsPage() {
       </p>
 
       <div className="mt-6 flex flex-col gap-4">
-        {items.map((item) => (
-          <div
-            key={item.title}
-            className="flex gap-4 rounded-2xl bg-white p-5 shadow-md shadow-black/5 dark:bg-zinc-900"
-          >
-            <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${item.bg}`}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={item.fg}>
-                {item.icon}
-              </svg>
-            </span>
-            <div className="min-w-0 text-sm leading-6 text-stone-600 dark:text-zinc-300">
-              <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                {item.title}
-              </p>
-              <div className="mt-2">{item.body}</div>
+        {items.map((item, i) => (
+          <div key={item.title} className="contents">
+            {item.section && (
+              <div className={`flex items-center gap-3 ${i === 0 ? "" : "mt-2"}`}>
+                <span className="h-px flex-1 bg-stone-200 dark:bg-zinc-800" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-stone-400 dark:text-zinc-500">
+                  {item.section}
+                </span>
+                <span className="h-px flex-1 bg-stone-200 dark:bg-zinc-800" />
+              </div>
+            )}
+            <div className="flex gap-4 rounded-2xl bg-white p-5 shadow-md shadow-black/5 dark:bg-zinc-900">
+              <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${item.bg}`}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={item.fg}>
+                  {item.icon}
+                </svg>
+              </span>
+              <div className="min-w-0 text-sm leading-6 text-stone-600 dark:text-zinc-300">
+                <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  {item.title}
+                </p>
+                <div className="mt-2">{item.body}</div>
+              </div>
             </div>
           </div>
         ))}

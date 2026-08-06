@@ -129,6 +129,15 @@ const places: Place[] = [
       "If you're serious about coffee, this is one of the best places to visit in Oslo. Tim Wendelboe is world-renowned for its award-winning coffee and relaxed, minimalist atmosphere. It's a small café with a big reputation, perfect for a carefully brewed filter coffee or espresso.",
   },
   {
+    name: "Håndbakt",
+    category: "Cafés",
+    image: "/favorites-handbakt-v2.jpg",
+    mapsQuery: "Håndbakt Oslo",
+    directions: ["🚶 20 min walk"],
+    description:
+      "A cosy artisan bakery tucked away in Kjølberggata, serving excellent coffee, freshly baked bread and pastries. They offer a great selection of vegan baked goods, and their weekend brunch is well worth a visit. It's a bit hidden away, but definitely worth seeking out.",
+  },
+  {
     name: "KUMI",
     category: "Cafés",
     image: "/favorites-kumi.jpg",
