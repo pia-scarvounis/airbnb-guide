@@ -40,7 +40,7 @@ export default function WifiPage() {
     <div className="flex flex-1 flex-col bg-stone-50 dark:bg-zinc-950">
       <div className="mx-auto flex w-full flex-1 flex-col px-8 pt-6 pb-10 md:max-w-xl">
         <Link
-          href="/"
+          href="/apartment"
           className="inline-flex w-fit items-center gap-1 text-sm text-stone-500 transition-colors hover:text-stone-900 dark:text-zinc-400 dark:hover:text-zinc-50"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">

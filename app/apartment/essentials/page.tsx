@@ -57,7 +57,7 @@ export default function EssentialsPage() {
             </span>
           </div>
           <p className="mt-1 pl-6">
-            Before 11:00 AM, unless we&apos;ve agreed otherwise.
+            Before 11:00 AM.
           </p>
 
           <button
