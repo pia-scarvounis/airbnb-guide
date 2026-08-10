@@ -26,6 +26,8 @@ type Place = {
   recommendations?: { name: string; description: string; mapsQuery?: string }[];
   tip?: string;
   image?: string;
+  images?: string[];
+  imagePosition?: string;
   mapsQuery?: string;
   website?: string;
 };
@@ -108,16 +110,15 @@ const places: Place[] = [
       "Only 15 minutes from the apartment, Galgen is one of my favorite nearby places. It's perfect for lunch or dinner, a drink on the outdoor terrace in the summer, or a cozy hot chocolate during the winter.",
   },
   {
-    name: "Kroloftet & Kruttverket",
+    name: "Kruttverket",
     category: "Cafés",
-    image: "/favorites-kroloftet.jpg",
+    images: ["/favorites-kroloftet.jpg", "/favorites-kruttverket-v2.jpg"],
     mapsQuery: "Kruttverket Oslo",
-    website: "https://www.kroloftet.no/",
     directions: [
-      "🚶 Walk through Svartdalsparken for about 15 minutes. The scenic path follows the river all the way to Kroloftet & Kruttverket.",
+      "🚶 Walk through Svartdalsparken for about 15 minutes. The scenic path follows the river all the way to Kruttverket.",
     ],
     description:
-      "Kroloftet & Kruttverket is one of my favourite local spots and well worth the walk through Svartdalsparken. During the day, it's a cozy café serving excellent coffee and freshly baked pastries, while in the evenings it becomes a relaxed bar and cultural venue. They host live music, talks, workshops and community events throughout the year, including live jazz on many Sunday evenings. You can also book a sauna by the river, making it a perfect place to spend an afternoon or evening. For upcoming events and more information, visit their website.",
+      "Kruttverket is one of my favourite local spots and well worth the walk through Svartdalsparken. During the day, it's a cozy café serving excellent coffee and freshly baked pastries, while in the evenings it becomes a relaxed bar and cultural venue. They host live music, talks, workshops and community events throughout the year, including live jazz on many Sunday evenings. You can also book a sauna by the river, making it a perfect place to spend an afternoon or evening. For upcoming events and more information, visit their website.",
   },
   {
     name: "Tim Wendelboe",
@@ -288,6 +289,30 @@ const places: Place[] = [
       "A winter favourite! Korketrekkeren is one of Oslo's most popular winter activities. Rent a sled (or bring your own) and enjoy a thrilling 2 km ride through the forest down to Midtstuen. From there, simply take the metro back to Frognerseteren and do it all over again. Sleds and helmets can be rented near Frognerseteren station, and it's completely free if you bring your own sled. The run is open whenever there's enough snow, making it a fun experience for both families and adults.",
   },
   {
+    name: "Vigelandsparken",
+    category: "Activities",
+    image: "/favorites-vigelandsparken.jpg",
+    mapsQuery: "Vigelandsparken Oslo",
+    directions: [
+      "🚌 Walk about 10 minutes to Galgeberg, then take bus 20 towards Skøyen to Vigelandsparken. The journey takes about 25 minutes.",
+    ],
+    description:
+      "One of Oslo's most famous attractions, featuring more than 200 sculptures by Gustav Vigeland set within the beautiful Frogner Park. It's the perfect place for a relaxing walk, a picnic, or simply enjoying one of the city's most beautiful green spaces.",
+    tip: "After your visit, explore Bogstadveien for shopping or wander through Frogner, one of Oslo's most charming neighbourhoods, known for its cafés, beautiful architecture and boutique shops.",
+  },
+  {
+    name: "Bygdøy",
+    category: "Activities",
+    image: "/favorites-bygdoy.jpg",
+    imagePosition: "80% center",
+    mapsQuery: "Bygdøy Oslo",
+    directions: [
+      "🚌 Take bus 54 to Jernbanetorget, then bus 30 to Ro. The journey takes about 45 minutes in total.",
+    ],
+    description:
+      "Bygdøy is one of my favourite areas in Oslo. Often called \"Museum Island\", it's home to some of Norway's most popular museums, including the Fram Museum, Kon-Tiki Museum and the Norwegian Museum of Cultural History. The peninsula also offers beautiful walking trails, beaches and cafés, making it easy to spend an entire day there.",
+  },
+  {
     name: "Oslo Summer Park (Skimore Oslo Climbing Park)",
     category: "Activities",
     image: "/favorites-oslo-summer-park.jpg",
@@ -319,9 +344,23 @@ function PlaceCard({ place }: { place: Place }) {
 
   return (
     <div className="overflow-hidden rounded-3xl bg-white shadow-md shadow-black/5 dark:bg-zinc-900">
-      <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-stone-200 to-stone-300 dark:from-zinc-800 dark:to-zinc-900">
-        {place.image && (
-          <Image src={place.image} alt={place.name} fill className="object-cover" />
+      <div className="relative flex aspect-[4/3] w-full gap-0.5 bg-gradient-to-br from-stone-200 to-stone-300 dark:from-zinc-800 dark:to-zinc-900">
+        {place.images ? (
+          place.images.map((src) => (
+            <div key={src} className="relative h-full flex-1">
+              <Image src={src} alt={place.name} fill className="object-cover" />
+            </div>
+          ))
+        ) : (
+          place.image && (
+            <Image
+              src={place.image}
+              alt={place.name}
+              fill
+              className="object-cover"
+              style={place.imagePosition ? { objectPosition: place.imagePosition } : undefined}
+            />
+          )
         )}
       </div>
       <div className="p-6">
@@ -404,7 +443,7 @@ function PlaceCard({ place }: { place: Place }) {
             </span>
             <p className="text-sm leading-5 text-stone-600 dark:text-zinc-300">
               <span className="font-medium text-zinc-900 dark:text-zinc-50">
-                Pia&apos;s tip:
+                Tip:
               </span>{" "}
               {place.tip}
             </p>
