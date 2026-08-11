@@ -143,7 +143,7 @@ export default function LocalInfoPage() {
               Travelling to or from Oslo Airport (Gardermoen)? I recommend
               taking the Vy local train instead of the Airport Express
               (Flytoget). It usually costs less than half the price and
-              takes almost the same amount of time.
+              takes the same amount of time.
             </p>
           </div>
         </div>

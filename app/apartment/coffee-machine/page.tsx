@@ -3,7 +3,7 @@ import ApartmentDetailLayout from "../DetailLayout";
 
 const steps = [
   {
-    title: "Turn it on",
+    title: "Turn on the power",
     description: "Press the button by the power outlet to turn the machine on.",
   },
   {
@@ -13,12 +13,12 @@ const steps = [
   {
     title: "Fill water",
     description:
-      "Pull out or open the rear tank and fill it with fresh, cold water.",
+      "Pull out or open the rear tank. If there's no water in it, fill it with fresh, cold water up to the max line.",
   },
   {
     title: "Add coffee",
     description:
-      "Snap the single or double filter basket into the portafilter arm, add finely ground coffee, and pack it down flat with the tamper scoop.",
+      "You'll find the filter baskets and tamper in the round grey Le Creuset container in front of the machine. Snap the single or double filter basket into the portafilter arm, add finely ground coffee, and pack it down flat with the tamper scoop.",
   },
   {
     title: "Lock in",
@@ -32,7 +32,7 @@ const steps = [
   {
     title: "Steam milk",
     description:
-      "Fill the milk pitcher with cold milk. Press the steam button and wait until the light stays on steadily. Then open the steam valve.",
+      "Fill the milk pitcher with cold milk. Press the steam button (button 3) and wait until the light stays on steadily. Then open the steam valve. Afterwards, wipe the steam wand with a bit of paper and run the steam briefly to flush out any remaining milk.",
   },
 ];
 
@@ -65,8 +65,15 @@ export default function CoffeeMachinePage() {
       </div>
 
       <div className="mt-6 rounded-xl bg-stone-100 p-3 text-sm text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
-        ☕ Buy coffee ground on the second-finest setting - Fuglen and most
-        other cafés around town can grind it for you.
+        ☕ Feel free to use the coffee in the first cupboard above the coffee
+        machine.
+        <br />
+        <br />
+        <span className="font-medium text-zinc-900 dark:text-zinc-50">
+          Need more?
+        </span>{" "}
+        Fuglen and most other cafés around Oslo can grind coffee for you -
+        ask for the second-finest setting.
       </div>
     </ApartmentDetailLayout>
   );

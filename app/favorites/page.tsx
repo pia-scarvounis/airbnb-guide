@@ -93,7 +93,7 @@ const places: Place[] = [
     image: "/favorites-fuglen.jpg",
     directions: [
       "🚶 10 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at St Halvards gate. Fuglen is right next to the bus stop.",
+      "🚌 Take bus 54 towards Kjelsås stasjon, just one stop to St Halvards gate. Fuglen is right next to the bus stop.",
     ],
     description:
       "Fuglen is one of Oslo's most iconic coffee shops, known for its excellent specialty coffee and stylish 1950s- and 1960s-inspired Scandinavian interior. During the day, it's a great place for coffee and something sweet, while in the evenings it transforms into a cozy cocktail bar. In the colder months, they often light a fire outside, and in summer the large sunny outdoor terrace is one of the best places to relax with a coffee or drink.",
@@ -125,7 +125,10 @@ const places: Place[] = [
     category: "Cafés",
     image: "/favorites-tim-wendelboe.jpg",
     mapsQuery: "Tim Wendelboe Oslo",
-    directions: ["🚌 Take bus 54 to Møllerveien, then walk 10 minutes."],
+    directions: [
+      "🚶 45 min walk",
+      "🚌 Take bus 54 to Møllerveien, then walk 10 minutes.",
+    ],
     description:
       "If you're serious about coffee, this is one of the best places to visit in Oslo. Tim Wendelboe is world-renowned for its award-winning coffee and relaxed, minimalist atmosphere. It's a small café with a big reputation, perfect for a carefully brewed filter coffee or espresso.",
   },
