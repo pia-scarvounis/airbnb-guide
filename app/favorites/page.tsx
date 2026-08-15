@@ -258,7 +258,7 @@ const places: Place[] = [
     image: "/favorites-hammerhai.jpg",
     mapsQuery: "Hammerhai Oslo",
     directions: [
-      "🚶 30–35 min walk",
+      "🚶 25 min walk",
       "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 5 minutes.",
     ],
     description:
