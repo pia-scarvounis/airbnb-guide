@@ -242,7 +242,7 @@ const places: Place[] = [
     image: "/favorites-oslo-islands-v2.jpg",
     mapsQuery: "Aker Brygge, Oslo",
     directions: [
-      "🚌 Take bus 70 towards Nationaltheatret, then walk about 5 minutes to Aker Brygge, where the island ferries depart.",
+      "🚌 Take bus 70 towards Nationaltheatret and get off at Nationaltheatret, then walk about 5 minutes to Aker Brygge, where the island ferries depart.",
     ],
     description:
       "One of my favourite things to do in Oslo is visiting the islands in the Oslo Fjord. They're perfect for a relaxing day surrounded by nature, whether you want to go for a walk, have a picnic, swim, or simply enjoy the peaceful atmosphere. They're worth visiting from spring through autumn. The island ferries are part of the Ruter public transport system, so you can use a regular bus ticket - no extra ferry ticket is needed. You can also hop on and off the ferries to explore several islands in one day.",
