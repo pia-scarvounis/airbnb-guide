@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600"] });
@@ -23,6 +23,7 @@ type Place = {
   time?: string;
   directions?: string[];
   description: string;
+  descriptionLinks?: { text: string; to: string }[];
   recommendations?: { name: string; description: string; mapsQuery?: string }[];
   tip?: string;
   image?: string;
@@ -31,6 +32,44 @@ type Place = {
   mapsQuery?: string;
   website?: string;
 };
+
+function slugify(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function renderDescription(
+  text: string,
+  links: { text: string; to: string }[] | undefined,
+  onNavigate: (name: string) => void
+) {
+  if (!links || links.length === 0) return text;
+
+  let remaining = text;
+  const nodes: React.ReactNode[] = [];
+
+  links.forEach((link, i) => {
+    const idx = remaining.indexOf(link.text);
+    if (idx === -1) return;
+    nodes.push(remaining.slice(0, idx));
+    nodes.push(
+      <button
+        key={i}
+        type="button"
+        onClick={() => onNavigate(link.to)}
+        className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-50"
+      >
+        {link.text}
+      </button>
+    );
+    remaining = remaining.slice(idx + link.text.length);
+  });
+
+  nodes.push(remaining);
+  return nodes;
+}
 
 const places: Place[] = [
   {
@@ -93,10 +132,23 @@ const places: Place[] = [
     image: "/favorites-jimmys.jpg",
     mapsQuery: "Jimmys, Leirfallsgata 6, Oslo",
     directions: [
+      "🚶 40 min walk",
       "🚌 Take bus 54 towards Kjelsås stasjon and get off at Jakob kirke, then walk about 5 minutes.",
     ],
     description:
       "Jimmy's is a relaxed wine and food bar on Grünerløkka with great wine and a menu made for sharing. Expect oysters, tartare, French-style pizza and other creative small plates. A great spot for dinner and wine in a casual, lively atmosphere.",
+  },
+  {
+    name: "Betong",
+    category: "Restaurants",
+    image: "/favorites-betong.jpg",
+    mapsQuery: "Betong Oslo",
+    directions: [
+      "🚶 25 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 3 minutes.",
+    ],
+    description:
+      "Betong is a Michelin-listed restaurant in Bjørvika serving creative, modern food in a relaxed and lively setting. They have a strong focus on sustainability and zero-waste cooking, with both tasting menus and an à la carte bar menu. A great choice if you want something a little more special without the typical fine-dining atmosphere.",
   },
   {
     name: "Fuglen Coffee Roasters",
@@ -163,6 +215,18 @@ const places: Place[] = [
     ],
     description:
       "KUMI is a beautiful organic café and restaurant serving modern vegetarian and vegan comfort food inspired by Japanese and Nordic flavours. It's one of my favourite places for brunch or lunch, with excellent coffee, fresh juices, mocktails and a carefully selected menu of wine, beer and cocktails. The bright interior and sunny outdoor seating in Oslobukta make it a perfect place to relax after exploring the Opera House and MUNCH Museum.",
+  },
+  {
+    name: "Lille Betong",
+    category: "Cafés",
+    image: "/favorites-lille-betong.jpg",
+    mapsQuery: "Lille Betong Oslo",
+    directions: [
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 3 minutes.",
+    ],
+    description:
+      "Lille Betong is Betong's little sister - a small and relaxed café and wine bar in Bjørvika. Come during the day for great coffee, freshly baked pastries and sandwiches, or stop by on Friday and Saturday evening for wine, drinks and dishes from Betong. Their pastries are especially worth trying!",
+    descriptionLinks: [{ text: "Betong's", to: "Betong" }],
   },
   {
     name: "Hakone",
@@ -364,13 +428,22 @@ const places: Place[] = [
   },
 ];
 
-function PlaceCard({ place }: { place: Place }) {
+function PlaceCard({
+  place,
+  onNavigate,
+}: {
+  place: Place;
+  onNavigate: (name: string) => void;
+}) {
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     place.mapsQuery ?? place.name
   )}`;
 
   return (
-    <div className="overflow-hidden rounded-3xl bg-white shadow-md shadow-black/5 dark:bg-zinc-900">
+    <div
+      id={slugify(place.name)}
+      className="scroll-mt-6 overflow-hidden rounded-3xl bg-white shadow-md shadow-black/5 dark:bg-zinc-900"
+    >
       <div className="relative flex aspect-[4/3] w-full gap-0.5 bg-gradient-to-br from-stone-200 to-stone-300 dark:from-zinc-800 dark:to-zinc-900">
         {place.images ? (
           place.images.map((src) => (
@@ -426,7 +499,7 @@ function PlaceCard({ place }: { place: Place }) {
             ABOUT
           </p>
           <p className="mt-2 text-sm leading-6 text-stone-600 dark:text-zinc-300">
-            {place.description}
+            {renderDescription(place.description, place.descriptionLinks, onNavigate)}
           </p>
         </div>
 
@@ -524,7 +597,23 @@ function PlaceCard({ place }: { place: Place }) {
 
 export default function FavoritesPage() {
   const [active, setActive] = useState<Filter>("All");
+  const [scrollTick, setScrollTick] = useState(0);
+  const pendingScrollRef = useRef<string | null>(null);
   const visible = places.filter((p) => active === "All" || p.category === active);
+
+  useEffect(() => {
+    if (!pendingScrollRef.current) return;
+    document.getElementById(pendingScrollRef.current)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    pendingScrollRef.current = null;
+  }, [scrollTick, active]);
+
+  function handleNavigate(name: string) {
+    const target = places.find((p) => p.name === name);
+    if (!target) return;
+    setActive(target.category);
+    pendingScrollRef.current = slugify(target.name);
+    setScrollTick((t) => t + 1);
+  }
 
   return (
     <div className="flex flex-1 flex-col bg-stone-50 dark:bg-zinc-950">
@@ -572,7 +661,9 @@ export default function FavoritesPage() {
                 : `No ${active.toLowerCase()} added yet.`}
             </p>
           ) : (
-            visible.map((place) => <PlaceCard key={place.name} place={place} />)
+            visible.map((place) => (
+              <PlaceCard key={place.name} place={place} onNavigate={handleNavigate} />
+            ))
           )}
         </div>
       </div>
