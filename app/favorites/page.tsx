@@ -52,12 +52,12 @@ const places: Place[] = [
       "🚌 Take bus 54 towards Kjelsås stasjon and get off at St. Halvards gate (1 stop).",
     ],
     description:
-      "ZZ Pizza is one of my favourite pizza places in Oslo, serving authentic Neapolitan-style pizzas with airy, wood-fired crusts and high-quality ingredients. If you're not sure what to order, I highly recommend the Pancetta & Blue Cheese pizza or the Mushroom pizza - they're both favourites of mine. It's a great spot for lunch or dinner if you're craving authentic Italian pizza.",
+      "ZZ Pizza is one of my favourite pizza places in Oslo, serving Neapolitan-style pizzas with airy, wood-fired crusts and creative toppings. My favourite is the Pancetta & Blue Cheese, but the Mushroom, Oxtail & Gochujang and French Onion Soup pizzas are also really good. I recommend ordering a few different ones to share!",
   },
   {
     name: "Smia Galleri",
     category: "Restaurants",
-    image: "/favorites-smia-galleri.jpg",
+    image: "/favorites-smia-galleri-v2.jpg",
     mapsQuery: "Smia Galleri Oslo",
     directions: ["🚶 10 min walk"],
     description:
@@ -86,6 +86,17 @@ const places: Place[] = [
     ],
     description:
       "Delicatessen is one of Oslo's most popular tapas restaurants and a great place to share a meal with friends or family. The menu features a wide selection of authentic Spanish tapas, from classic favourites to seasonal specials, all served in a lively and relaxed atmosphere. It's especially popular in the evenings, so booking a table in advance is recommended.",
+  },
+  {
+    name: "Jimmy's Oslo",
+    category: "Restaurants",
+    image: "/favorites-jimmys.jpg",
+    mapsQuery: "Jimmys, Leirfallsgata 6, Oslo",
+    directions: [
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Jakob kirke, then walk about 5 minutes.",
+    ],
+    description:
+      "Jimmy's is a relaxed wine and food bar on Grünerløkka with great wine and a menu made for sharing. Expect oysters, tartare, French-style pizza and other creative small plates. A great spot for dinner and wine in a casual, lively atmosphere.",
   },
   {
     name: "Fuglen Coffee Roasters",
