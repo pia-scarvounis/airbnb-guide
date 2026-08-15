@@ -49,7 +49,7 @@ const places: Place[] = [
     mapsQuery: "ZZ Pizza Oslo",
     directions: [
       "🚶 10 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at St. Halvards gate (1 stop).",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at St. Halvards gate (1 stop).",
     ],
     description:
       "ZZ Pizza is one of my favourite pizza places in Oslo, serving authentic Neapolitan-style pizzas with airy, wood-fired crusts and high-quality ingredients. If you're not sure what to order, I highly recommend the Pancetta & Blue Cheese pizza or the Mushroom pizza - they're both favourites of mine. It's a great spot for lunch or dinner if you're craving authentic Italian pizza.",
@@ -70,7 +70,7 @@ const places: Place[] = [
     mapsQuery: "Madonna Oslo",
     directions: [
       "🚶 25 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 3 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 3 minutes.",
     ],
     description:
       "Madonna is one of my favourite restaurants in Oslo, located right next to the MUNCH Museum in Bjørvika. This modern bistro serves creative dishes inspired by flavours from around the world, using seasonal ingredients in a relaxed and welcoming setting. It's featured in the Michelin Guide, but still feels unpretentious and perfect for a long dinner with friends. In the summer, the outdoor seating is a great place to enjoy the evening.",
@@ -82,7 +82,7 @@ const places: Place[] = [
     mapsQuery: "Delicatessen Oslo",
     directions: [
       "🚶 40 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Jakob kirke, then walk about 3 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Jakob kirke, then walk about 3 minutes.",
     ],
     description:
       "Delicatessen is one of Oslo's most popular tapas restaurants and a great place to share a meal with friends or family. The menu features a wide selection of authentic Spanish tapas, from classic favourites to seasonal specials, all served in a lively and relaxed atmosphere. It's especially popular in the evenings, so booking a table in advance is recommended.",
@@ -93,7 +93,7 @@ const places: Place[] = [
     image: "/favorites-fuglen.jpg",
     directions: [
       "🚶 10 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, just one stop to St Halvards gate. Fuglen is right next to the bus stop.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at St Halvards gate (1 stop). Fuglen is right next to the bus stop.",
     ],
     description:
       "Fuglen is one of Oslo's most iconic coffee shops, known for its excellent specialty coffee and stylish 1950s- and 1960s-inspired Scandinavian interior. During the day, it's a great place for coffee and something sweet, while in the evenings it transforms into a cozy cocktail bar. In the colder months, they often light a fire outside, and in summer the large sunny outdoor terrace is one of the best places to relax with a coffee or drink.",
@@ -104,7 +104,7 @@ const places: Place[] = [
     image: "/favorites-galgen.jpg",
     directions: [
       "🚶 15 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at St Halvards gate, then walk 4–5 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at St Halvards gate, then walk 4–5 minutes.",
     ],
     description:
       "Only 15 minutes from the apartment, Galgen is one of my favorite nearby places. It's perfect for lunch or dinner, a drink on the outdoor terrace in the summer, or a cozy hot chocolate during the winter.",
@@ -127,7 +127,7 @@ const places: Place[] = [
     mapsQuery: "Tim Wendelboe Oslo",
     directions: [
       "🚶 45 min walk",
-      "🚌 Take bus 54 to Møllerveien, then walk 10 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Møllerveien, then walk 10 minutes.",
     ],
     description:
       "If you're serious about coffee, this is one of the best places to visit in Oslo. Tim Wendelboe is world-renowned for its award-winning coffee and relaxed, minimalist atmosphere. It's a small café with a big reputation, perfect for a carefully brewed filter coffee or espresso.",
@@ -148,7 +148,7 @@ const places: Place[] = [
     mapsQuery: "KUMI Oslobukta",
     directions: [
       "🚶 20–25 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 5 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 5 minutes.",
     ],
     description:
       "KUMI is a beautiful organic café and restaurant serving modern vegetarian and vegan comfort food inspired by Japanese and Nordic flavours. It's one of my favourite places for brunch or lunch, with excellent coffee, fresh juices, mocktails and a carefully selected menu of wine, beer and cocktails. The bright interior and sunny outdoor seating in Oslobukta make it a perfect place to relax after exploring the Opera House and MUNCH Museum.",
@@ -166,13 +166,25 @@ const places: Place[] = [
       "Hakone is one of my favourite coffee chains in Oslo, with several locations across the city. Inspired by Japanese coffee culture, it combines minimalist design with excellent specialty coffee and high-quality pastries. If you're looking for a quick coffee to go or a peaceful place to take a break, Hakone is always a great choice. Don't miss their popular pistachio croissant if it's available!",
   },
   {
+    name: "Brostein",
+    category: "Bars",
+    image: "/favorites-brostein-v2.jpg",
+    mapsQuery: "Brostein, St. Halvards gate 23, Oslo",
+    directions: [
+      "🚶 About 10 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at St. Halvards gate (1 stop), then walk about 3 minutes.",
+    ],
+    description:
+      "Brostein is a new neighbourhood wine bar just a short walk from the apartment. They have an interesting selection of wines and playful cocktails, like their blue cheese martini. The snacks are just as fun - try the cheese puffs served with chopsticks or chips with whipped Holiday dip. A great little local spot for a glass of wine or a drink close to home.",
+  },
+  {
     name: "Hammerhai",
     category: "Bars",
     image: "/favorites-hammerhai.jpg",
     mapsQuery: "Hammerhai Oslo",
     directions: [
       "🚶 30–35 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika, then walk about 5 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 5 minutes.",
     ],
     description:
       "Hammerhai is one of my favourite waterfront bars in Oslo. It's known for creative cocktails, colourful interiors and a relaxed atmosphere. During the summer, the outdoor seating by the Oslofjord is a great place for a drink in the sun, while evenings often feature DJs and a lively crowd.",
@@ -184,7 +196,7 @@ const places: Place[] = [
     mapsQuery: "Angst Bar Oslo",
     directions: [
       "🚶 30–35 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Storgata, then walk about 3 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Storgata, then walk about 3 minutes.",
     ],
     description:
       "Angst is one of my favourite bars in Oslo, known for its cozy atmosphere and laid-back vibe. It's a great place to start the evening with a drink, meet friends or simply enjoy the music and lively crowd. The outdoor seating is especially popular on warm summer evenings.",
@@ -196,7 +208,7 @@ const places: Place[] = [
     mapsQuery: "Himkok Oslo",
     directions: [
       "🚶 35–40 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Storgata, then walk about 2 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Storgata, then walk about 2 minutes.",
     ],
     description:
       "Himkok is one of Oslo's most iconic cocktail bars and regularly ranked among the best in the world. The award-winning Distillery Bar on the ground floor serves cocktails made with spirits distilled on-site. It's very popular, so booking a table in advance is recommended. Upstairs, you'll find a larger bar with a livelier atmosphere that turns into more of a nightclub later in the evening.",
@@ -208,7 +220,7 @@ const places: Place[] = [
     mapsQuery: "Blå Oslo",
     directions: [
       "🚶 45 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Møllerveien, then walk about 3 minutes.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Møllerveien, then walk about 3 minutes.",
     ],
     description:
       "BLÅ is one of Oslo's most iconic live music venues, located along the Akerselva river. It's known for its diverse concert programme, featuring everything from jazz and electronic music to hip-hop and international artists. On Sundays, they host live concerts, and the surrounding area often comes alive with markets, food stalls and a lively atmosphere. It's the perfect place to experience Oslo's creative and alternative side, whether you're stopping by for a drink or a night of live music.",
@@ -219,7 +231,7 @@ const places: Place[] = [
     image: "/favorites-oslo-islands-v2.jpg",
     mapsQuery: "Aker Brygge, Oslo",
     directions: [
-      "🚌 Take bus 70 from Kværner to Nationaltheatret, then walk about 5 minutes to Aker Brygge, where the island ferries depart.",
+      "🚌 Take bus 70 towards Nationaltheatret, then walk about 5 minutes to Aker Brygge, where the island ferries depart.",
     ],
     description:
       "One of my favourite things to do in Oslo is visiting the islands in the Oslo Fjord. They're perfect for a relaxing day surrounded by nature, whether you want to go for a walk, have a picnic, swim, or simply enjoy the peaceful atmosphere. They're worth visiting from spring through autumn. The island ferries are part of the Ruter public transport system, so you can use a regular bus ticket - no extra ferry ticket is needed. You can also hop on and off the ferries to explore several islands in one day.",
@@ -251,7 +263,7 @@ const places: Place[] = [
     mapsQuery: "Botanical Garden Oslo",
     directions: [
       "🚶 30 min walk",
-      "🚌 Walk about 10 minutes to Galgeberg, then take bus 20 to Tøyenparken.",
+      "🚌 Walk about 10 minutes to Galgeberg, then take bus 20 towards Skøyen and get off at Tøyenparken.",
     ],
     description:
       "Botanical Garden is one of Oslo's most beautiful green spaces and a perfect place for a relaxing walk. With thousands of plants from around the world, peaceful ponds and colourful seasonal flowers, it's a lovely escape from the city. Entry is free all year round.",
@@ -263,7 +275,7 @@ const places: Place[] = [
     mapsQuery: "Oslofjord Sauna, Sukkerbiten, Oslo",
     directions: [
       "🚶 30–35 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon, get off at Bjørvika. The sauna is a few minutes' walk from the bus stop.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika. The sauna is a few minutes' walk from the bus stop.",
     ],
     description:
       "Oslofjord Sauna is one of Oslo's most unique experiences. Relax in a floating sauna before taking a refreshing dip in the Oslofjord. It's popular all year round, but especially during the winter months when the contrast between the hot sauna and the icy water is unforgettable. Remember to book in advance, especially on weekends.",
@@ -275,7 +287,7 @@ const places: Place[] = [
     mapsQuery: "Ekebergparken Oslo",
     directions: [
       "🚶 30–35 min walk",
-      "🚌 Walk about 5 minutes to Kværner, then take bus 34 to Ekeberg Camping.",
+      "🚌 Walk about 5 minutes to Kværner, then take bus 34 towards Ekeberg Hageby and get off at Ekeberg Camping.",
     ],
     description:
       "Ekebergparken is one of Oslo's most beautiful places for a walk, combining nature, contemporary art and spectacular views over the city and the Oslofjord. Along the trails you'll discover sculptures by internationally renowned artists, peaceful forest paths and panoramic viewpoints. If you're visiting in the evening, don't miss the impressive underground light installations by James Turrell. Best of all, the park is free to visit and open all year round.",
@@ -286,7 +298,7 @@ const places: Place[] = [
     image: "/favorites-korketrekkeren-v2.jpg",
     mapsQuery: "Korketrekkeren Oslo",
     directions: [
-      "🚌 Take bus 54 towards Jernbanetorget. From Jernbanetorget, take Metro Line 1 to Frognerseteren. The toboggan run starts just below the metro station.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Jernbanetorget. From Jernbanetorget, take Metro Line 1 to Frognerseteren. The toboggan run starts just below the metro station.",
     ],
     description:
       "A winter favourite! Korketrekkeren is one of Oslo's most popular winter activities. Rent a sled (or bring your own) and enjoy a thrilling 2 km ride through the forest down to Midtstuen. From there, simply take the metro back to Frognerseteren and do it all over again. Sleds and helmets can be rented near Frognerseteren station, and it's completely free if you bring your own sled. The run is open whenever there's enough snow, making it a fun experience for both families and adults.",
@@ -297,7 +309,8 @@ const places: Place[] = [
     image: "/favorites-vigelandsparken.jpg",
     mapsQuery: "Vigelandsparken Oslo",
     directions: [
-      "🚌 Walk about 10 minutes to Galgeberg, then take bus 20 towards Skøyen to Vigelandsparken. The journey takes about 25 minutes.",
+      "🚶 About 1.5 hour walk",
+      "🚌 Walk about 10 minutes to Galgeberg, then take bus 20 towards Skøyen and get off at Vigelandsparken. The journey takes about 25 minutes.",
     ],
     description:
       "One of Oslo's most famous attractions, featuring more than 200 sculptures by Gustav Vigeland set within the beautiful Frogner Park. It's the perfect place for a relaxing walk, a picnic, or simply enjoying one of the city's most beautiful green spaces.",
@@ -310,7 +323,7 @@ const places: Place[] = [
     imagePosition: "80% center",
     mapsQuery: "Bygdøy Oslo",
     directions: [
-      "🚌 Take bus 54 to Jernbanetorget, then bus 30 to Ro. The journey takes about 45 minutes in total.",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Jernbanetorget, then take bus 30 towards Bygdøy and get off at Ro. The journey takes about 45 minutes in total.",
     ],
     description:
       "Bygdøy is one of my favourite areas in Oslo. Often called \"Museum Island\", it's home to some of Norway's most popular museums, including the Fram Museum, Kon-Tiki Museum and the Norwegian Museum of Cultural History. The peninsula also offers beautiful walking trails, beaches and cafés, making it easy to spend an entire day there.",
