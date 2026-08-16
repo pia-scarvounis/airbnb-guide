@@ -4,7 +4,7 @@ import ApartmentDetailLayout from "../DetailLayout";
 const steps = [
   {
     title: "Turn on the power",
-    description: "Press the button by the power outlet to turn the machine on.",
+    description: "Press the button by the power outlet.",
   },
   {
     title: "Power on the machine",
@@ -65,15 +65,17 @@ export default function CoffeeMachinePage() {
       </div>
 
       <div className="mt-6 rounded-xl bg-stone-100 p-3 text-sm text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
-        ☕ Feel free to use the coffee in the first cupboard above the coffee
-        machine.
+        ☕ Feel free to try some of my coffee if I have some - you&apos;ll find
+        it in the first cupboard above the coffee machine.
         <br />
         <br />
         <span className="font-medium text-zinc-900 dark:text-zinc-50">
-          Need more?
+          Need more coffee?
         </span>{" "}
-        Fuglen and most other cafés around Oslo can grind coffee for you -
-        ask for the second-finest setting.
+        You can buy ground coffee at any grocery store, or get fresh coffee
+        from Fuglen or other cafés around Oslo - whatever you prefer. If you
+        buy it from a café, ask them to grind it on the second-finest
+        setting.
       </div>
     </ApartmentDetailLayout>
   );

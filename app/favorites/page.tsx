@@ -115,6 +115,18 @@ const places: Place[] = [
       "Madonna is one of my favourite restaurants in Oslo, located right next to the MUNCH Museum in Bjørvika. This modern bistro serves creative dishes inspired by flavours from around the world, using seasonal ingredients in a relaxed and welcoming setting. It's featured in the Michelin Guide, but still feels unpretentious and perfect for a long dinner with friends. In the summer, the outdoor seating is a great place to enjoy the evening.",
   },
   {
+    name: "Betong",
+    category: "Restaurants",
+    image: "/favorites-betong.jpg",
+    mapsQuery: "Betong Oslo",
+    directions: [
+      "🚶 25 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 3 minutes.",
+    ],
+    description:
+      "Betong is a Michelin-listed restaurant in Bjørvika serving creative, modern food in a relaxed and lively setting. They have a strong focus on sustainability and zero-waste cooking, with both tasting menus and an à la carte bar menu. A great choice if you want something a little more special without the typical fine-dining atmosphere.",
+  },
+  {
     name: "Delicatessen",
     category: "Restaurants",
     image: "/favorites-delicatessen.jpg",
@@ -136,19 +148,7 @@ const places: Place[] = [
       "🚌 Take bus 54 towards Kjelsås stasjon and get off at Jakob kirke, then walk about 5 minutes.",
     ],
     description:
-      "Jimmy's is a relaxed wine and food bar on Grünerløkka with great wine and a menu made for sharing. Expect oysters, tartare, French-style pizza and other creative small plates. A great spot for dinner and wine in a casual, lively atmosphere.",
-  },
-  {
-    name: "Betong",
-    category: "Restaurants",
-    image: "/favorites-betong.jpg",
-    mapsQuery: "Betong Oslo",
-    directions: [
-      "🚶 25 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 3 minutes.",
-    ],
-    description:
-      "Betong is a Michelin-listed restaurant in Bjørvika serving creative, modern food in a relaxed and lively setting. They have a strong focus on sustainability and zero-waste cooking, with both tasting menus and an à la carte bar menu. A great choice if you want something a little more special without the typical fine-dining atmosphere.",
+      "Jimmy's is a relaxed wine and food bar on Grünerløkka with great wine and a menu made for sharing. Expect oysters, tartare, French-style pizza and other creative small plates. A great spot for dinner and wine, with a casual atmosphere that gets more lively with music later in the evening.",
   },
   {
     name: "Fuglen Coffee Roasters",
@@ -184,18 +184,6 @@ const places: Place[] = [
       "Kruttverket is one of my favourite local spots and well worth the walk through Svartdalsparken. During the day, it's a cozy café serving excellent coffee and freshly baked pastries, while in the evenings it becomes a relaxed bar and cultural venue. They host live music, talks, workshops and community events throughout the year, including live jazz on many Sunday evenings. You can also book a sauna by the river, making it a perfect place to spend an afternoon or evening. For upcoming events and more information, visit their website.",
   },
   {
-    name: "Tim Wendelboe",
-    category: "Cafés",
-    image: "/favorites-tim-wendelboe.jpg",
-    mapsQuery: "Tim Wendelboe Oslo",
-    directions: [
-      "🚶 45 min walk",
-      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Møllerveien, then walk 10 minutes.",
-    ],
-    description:
-      "If you're serious about coffee, this is one of the best places to visit in Oslo. Tim Wendelboe is world-renowned for its award-winning coffee and relaxed, minimalist atmosphere. It's a small café with a big reputation, perfect for a carefully brewed filter coffee or espresso.",
-  },
-  {
     name: "Håndbakt",
     category: "Cafés",
     image: "/favorites-handbakt-v2.jpg",
@@ -222,6 +210,7 @@ const places: Place[] = [
     image: "/favorites-lille-betong.jpg",
     mapsQuery: "Lille Betong Oslo",
     directions: [
+      "🚶 25 min walk",
       "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 3 minutes.",
     ],
     description:
@@ -239,6 +228,18 @@ const places: Place[] = [
     ],
     description:
       "Hakone is one of my favourite coffee chains in Oslo, with several locations across the city. Inspired by Japanese coffee culture, it combines minimalist design with excellent specialty coffee and high-quality pastries. If you're looking for a quick coffee to go or a peaceful place to take a break, Hakone is always a great choice. Don't miss their popular pistachio croissant if it's available!",
+  },
+  {
+    name: "Tim Wendelboe",
+    category: "Cafés",
+    image: "/favorites-tim-wendelboe.jpg",
+    mapsQuery: "Tim Wendelboe Oslo",
+    directions: [
+      "🚶 45 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Møllerveien, then walk 10 minutes.",
+    ],
+    description:
+      "If you're serious about coffee, this is one of the best places to visit in Oslo. Tim Wendelboe is world-renowned for its award-winning coffee and relaxed, minimalist atmosphere. It's a small café with a big reputation, perfect for a carefully brewed filter coffee or espresso.",
   },
   {
     name: "Brostein",
