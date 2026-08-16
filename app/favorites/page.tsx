@@ -16,10 +16,56 @@ const filters = [
 ] as const;
 
 type Filter = (typeof filters)[number];
+type Category = Exclude<Filter, "All">;
+
+const areas = [
+  "Nearby",
+  "Kampen & Tøyen",
+  "Bjørvika",
+  "Grünerløkka",
+  "City Centre",
+  "Frogner",
+] as const;
+
+type Area = (typeof areas)[number];
+
+const areaInfo: Record<Area, { time: string; description: string }> = {
+  Nearby: {
+    time: "3–15 min walk",
+    description:
+      "My favourite spots close to the apartment. All within a short walk.",
+  },
+  "Kampen & Tøyen": {
+    time: "15–30 min walk",
+    description:
+      "Colourful wooden houses, quiet streets, local cafés and green spaces - a charming part of Oslo that's great to explore on foot.",
+  },
+  Bjørvika: {
+    time: "25–35 min walk",
+    description:
+      "Oslo's modern waterfront, home to the Opera House, MUNCH Museum, saunas and some great places to eat and drink by the fjord. You can also take the bus from the apartment - 3 stops and get off at Bjørvika.",
+  },
+  Grünerløkka: {
+    time: "35–45 min walk",
+    description:
+      "One of Oslo's liveliest neighbourhoods, packed with cafés, bars, restaurants, vintage shops and small boutiques. You can also take the bus from the apartment and get off at either Jakob kirke or Møllerveien.",
+  },
+  "City Centre": {
+    time: "30–40 min walk",
+    description:
+      "The heart of Oslo, with shopping, restaurants, nightlife and many of the city's main sights within easy reach.",
+  },
+  Frogner: {
+    time: "60–90 min walk",
+    description:
+      "An elegant neighbourhood with beautiful architecture, leafy streets, cafés and boutiques - perfect to combine with a visit to Vigelandsparken. Easy to reach by public transport via Majorstuen or with bus 20 from Galgeberg.",
+  },
+};
 
 type Place = {
   name: string;
-  category: Exclude<Filter, "All">;
+  categories: Category[];
+  areas?: Area[];
   time?: string;
   directions?: string[];
   description: string;
@@ -74,7 +120,8 @@ function renderDescription(
 const places: Place[] = [
   {
     name: "Kraft",
-    category: "Restaurants",
+    categories: ["Restaurants"],
+    areas: ["Nearby"],
     image: "/favorites-kraft-v2.jpg",
     mapsQuery: "Kraft Restaurant Oslo",
     directions: ["🚶 3–4 min walk"],
@@ -83,7 +130,8 @@ const places: Place[] = [
   },
   {
     name: "ZZ Pizza",
-    category: "Restaurants",
+    categories: ["Restaurants"],
+    areas: ["Nearby"],
     image: "/favorites-zz-pizza.jpg",
     mapsQuery: "ZZ Pizza Oslo",
     directions: [
@@ -95,7 +143,8 @@ const places: Place[] = [
   },
   {
     name: "Smia Galleri",
-    category: "Restaurants",
+    categories: ["Restaurants"],
+    areas: ["Nearby"],
     image: "/favorites-smia-galleri-v2.jpg",
     mapsQuery: "Smia Galleri Oslo",
     directions: ["🚶 10 min walk"],
@@ -104,7 +153,8 @@ const places: Place[] = [
   },
   {
     name: "Madonna",
-    category: "Restaurants",
+    categories: ["Restaurants"],
+    areas: ["Bjørvika"],
     image: "/favorites-madonna.jpg",
     mapsQuery: "Madonna Oslo",
     directions: [
@@ -116,7 +166,8 @@ const places: Place[] = [
   },
   {
     name: "Betong",
-    category: "Restaurants",
+    categories: ["Restaurants"],
+    areas: ["Bjørvika"],
     image: "/favorites-betong.jpg",
     mapsQuery: "Betong Oslo",
     directions: [
@@ -128,7 +179,8 @@ const places: Place[] = [
   },
   {
     name: "Delicatessen",
-    category: "Restaurants",
+    categories: ["Restaurants"],
+    areas: ["Grünerløkka"],
     image: "/favorites-delicatessen.jpg",
     mapsQuery: "Delicatessen Oslo",
     directions: [
@@ -140,7 +192,8 @@ const places: Place[] = [
   },
   {
     name: "Jimmy's Oslo",
-    category: "Restaurants",
+    categories: ["Restaurants", "Bars"],
+    areas: ["Grünerløkka"],
     image: "/favorites-jimmys.jpg",
     mapsQuery: "Jimmys, Leirfallsgata 6, Oslo",
     directions: [
@@ -152,7 +205,8 @@ const places: Place[] = [
   },
   {
     name: "Fuglen Coffee Roasters",
-    category: "Cafés",
+    categories: ["Cafés", "Bars"],
+    areas: ["Nearby"],
     image: "/favorites-fuglen.jpg",
     directions: [
       "🚶 10 min walk",
@@ -163,7 +217,8 @@ const places: Place[] = [
   },
   {
     name: "Galgen",
-    category: "Cafés",
+    categories: ["Cafés", "Restaurants", "Bars"],
+    areas: ["Nearby", "Kampen & Tøyen"],
     image: "/favorites-galgen.jpg",
     directions: [
       "🚶 15 min walk",
@@ -174,7 +229,8 @@ const places: Place[] = [
   },
   {
     name: "Kruttverket",
-    category: "Cafés",
+    categories: ["Cafés", "Bars", "Activities"],
+    areas: ["Nearby"],
     images: ["/favorites-kroloftet.jpg", "/favorites-kruttverket-v2.jpg"],
     mapsQuery: "Kruttverket Oslo",
     directions: [
@@ -185,7 +241,8 @@ const places: Place[] = [
   },
   {
     name: "Håndbakt",
-    category: "Cafés",
+    categories: ["Cafés"],
+    areas: ["Kampen & Tøyen"],
     image: "/favorites-handbakt-v2.jpg",
     mapsQuery: "Håndbakt Oslo",
     directions: ["🚶 20 min walk"],
@@ -193,8 +250,31 @@ const places: Place[] = [
       "A cosy artisan bakery tucked away in Kjølberggata, serving excellent coffee, freshly baked bread and pastries. They offer a great selection of vegan baked goods, and their weekend brunch is well worth a visit. It's a bit hidden away, but definitely worth seeking out.",
   },
   {
+    name: "Farine",
+    categories: ["Cafés"],
+    areas: ["Kampen & Tøyen"],
+    image: "/favorites-farine.jpg",
+    mapsQuery: "Farine Kampen Oslo",
+    directions: ["🚶 About 20 min walk"],
+    description:
+      "Farine is a cosy neighbourhood bakery and café on Kampen, serving sourdough bread and buns, cakes, and simple breakfast and lunch dishes. Everything is made from scratch in their own bakery and kitchen.",
+  },
+  {
+    name: "Chez Florent",
+    categories: ["Cafés"],
+    areas: ["Kampen & Tøyen"],
+    image: "/favorites-chez-florent.jpg",
+    imagePosition: "center 57%",
+    mapsQuery: "Chez Florent Kampen Oslo",
+    directions: ["🚶 About 20 min walk"],
+    description:
+      "Chez Florent is a small French neighbourhood bakery on Kampen, known for its huge croissants and delicious French pastries. Try the pistachio-filled Oslo Roll or one of their croissants - perfect to grab with a coffee while exploring Kampen.",
+    tip: "The bakery is often self-service with no staff present. Bring a physical bank card for the self-checkout, and check the opening hours online before you go - they can vary.",
+  },
+  {
     name: "KUMI",
-    category: "Cafés",
+    categories: ["Cafés", "Restaurants"],
+    areas: ["Bjørvika"],
     image: "/favorites-kumi.jpg",
     mapsQuery: "KUMI Oslobukta",
     directions: [
@@ -206,7 +286,8 @@ const places: Place[] = [
   },
   {
     name: "Lille Betong",
-    category: "Cafés",
+    categories: ["Cafés", "Bars"],
+    areas: ["Bjørvika"],
     image: "/favorites-lille-betong.jpg",
     mapsQuery: "Lille Betong Oslo",
     directions: [
@@ -219,19 +300,22 @@ const places: Place[] = [
   },
   {
     name: "Hakone",
-    category: "Cafés",
+    categories: ["Cafés"],
+    areas: ["Kampen & Tøyen"],
     image: "/favorites-hakone.jpg",
     mapsQuery: "Hakone Coffee Oslo",
     directions: [
-      "🚶 40 min walk",
+      "🚶 About 25 min walk to Hakone Tøyen",
       "🚌 Take bus 54 towards Jernbanetorget and get off at Storgata or Jernbanetorget. The nearest Hakone is just a short walk from both stops.",
     ],
     description:
       "Hakone is one of my favourite coffee chains in Oslo, with several locations across the city. Inspired by Japanese coffee culture, it combines minimalist design with excellent specialty coffee and high-quality pastries. If you're looking for a quick coffee to go or a peaceful place to take a break, Hakone is always a great choice. Don't miss their popular pistachio croissant if it's available!",
+    tip: "Hakone has several locations around Oslo, so you may also come across one while exploring the city.",
   },
   {
     name: "Tim Wendelboe",
-    category: "Cafés",
+    categories: ["Cafés"],
+    areas: ["Grünerløkka"],
     image: "/favorites-tim-wendelboe.jpg",
     mapsQuery: "Tim Wendelboe Oslo",
     directions: [
@@ -243,7 +327,8 @@ const places: Place[] = [
   },
   {
     name: "Brostein",
-    category: "Bars",
+    categories: ["Bars"],
+    areas: ["Nearby"],
     image: "/favorites-brostein-v2.jpg",
     mapsQuery: "Brostein, St. Halvards gate 23, Oslo",
     directions: [
@@ -255,7 +340,8 @@ const places: Place[] = [
   },
   {
     name: "Hammerhai",
-    category: "Bars",
+    categories: ["Bars"],
+    areas: ["Bjørvika"],
     image: "/favorites-hammerhai.jpg",
     mapsQuery: "Hammerhai Oslo",
     directions: [
@@ -266,8 +352,23 @@ const places: Place[] = [
       "Hammerhai is one of my favourite waterfront bars in Oslo. It's known for creative cocktails, colourful interiors and a relaxed atmosphere. During the summer, the outdoor seating by the Oslofjord is a great place for a drink in the sun, while evenings often feature DJs and a lively crowd.",
   },
   {
+    name: "Anam Cara",
+    categories: ["Bars"],
+    areas: ["Bjørvika"],
+    image: "/favorites-anam-cara.jpg",
+    imagePosition: "center 65%",
+    mapsQuery: "Anam Cara Rostockgata 42 Oslo",
+    directions: [
+      "🚶 About 25 min walk",
+      "🚌 Take bus 54 towards Kjelsås stasjon and get off at Bjørvika, then walk about 3 minutes.",
+    ],
+    description:
+      "Anam Cara is a cosy cocktail and wine bar in Bjørvika, known for creative cocktails, interesting wines and a warm, intimate atmosphere. Their cocktail menu changes with the seasons and features some fun and unexpected flavours. A great spot for a drink before or after dinner in Bjørvika.",
+  },
+  {
     name: "Angst",
-    category: "Bars",
+    categories: ["Bars"],
+    areas: ["City Centre"],
     image: "/favorites-angst-v2.jpg",
     mapsQuery: "Angst Bar Oslo",
     directions: [
@@ -279,7 +380,8 @@ const places: Place[] = [
   },
   {
     name: "Himkok",
-    category: "Bars",
+    categories: ["Bars"],
+    areas: ["City Centre"],
     image: "/favorites-himkok.jpg",
     mapsQuery: "Himkok Oslo",
     directions: [
@@ -291,7 +393,8 @@ const places: Place[] = [
   },
   {
     name: "BLÅ",
-    category: "Bars",
+    categories: ["Bars", "Activities"],
+    areas: ["Grünerløkka"],
     image: "/favorites-bla-v2.jpg",
     mapsQuery: "Blå Oslo",
     directions: [
@@ -303,7 +406,7 @@ const places: Place[] = [
   },
   {
     name: "Oslo Islands",
-    category: "Activities",
+    categories: ["Activities"],
     image: "/favorites-oslo-islands-v2.jpg",
     mapsQuery: "Aker Brygge, Oslo",
     directions: [
@@ -334,7 +437,8 @@ const places: Place[] = [
   },
   {
     name: "Botanical Garden",
-    category: "Activities",
+    categories: ["Activities"],
+    areas: ["Kampen & Tøyen"],
     image: "/favorites-botanical-garden.jpg",
     mapsQuery: "Botanical Garden Oslo",
     directions: [
@@ -346,7 +450,8 @@ const places: Place[] = [
   },
   {
     name: "Oslofjord Sauna",
-    category: "Activities",
+    categories: ["Activities"],
+    areas: ["Bjørvika"],
     image: "/favorites-oslofjord-sauna.jpg",
     mapsQuery: "Oslofjord Sauna, Sukkerbiten, Oslo",
     directions: [
@@ -358,7 +463,7 @@ const places: Place[] = [
   },
   {
     name: "Ekebergparken",
-    category: "Activities",
+    categories: ["Activities"],
     image: "/favorites-ekebergparken.jpg",
     mapsQuery: "Ekebergparken Oslo",
     directions: [
@@ -370,7 +475,7 @@ const places: Place[] = [
   },
   {
     name: "Korketrekkeren",
-    category: "Activities",
+    categories: ["Activities"],
     image: "/favorites-korketrekkeren-v2.jpg",
     mapsQuery: "Korketrekkeren Oslo",
     directions: [
@@ -381,7 +486,8 @@ const places: Place[] = [
   },
   {
     name: "Vigelandsparken",
-    category: "Activities",
+    categories: ["Activities"],
+    areas: ["Frogner"],
     image: "/favorites-vigelandsparken.jpg",
     mapsQuery: "Vigelandsparken Oslo",
     directions: [
@@ -394,7 +500,7 @@ const places: Place[] = [
   },
   {
     name: "Bygdøy",
-    category: "Activities",
+    categories: ["Activities"],
     image: "/favorites-bygdoy.jpg",
     imagePosition: "80% center",
     mapsQuery: "Bygdøy Oslo",
@@ -406,7 +512,7 @@ const places: Place[] = [
   },
   {
     name: "Oslo Summer Park (Skimore Oslo Climbing Park)",
-    category: "Activities",
+    categories: ["Activities"],
     image: "/favorites-oslo-summer-park.jpg",
     mapsQuery: "Skimore Oslo Climbing Park",
     directions: [
@@ -417,7 +523,7 @@ const places: Place[] = [
   },
   {
     name: "Oslo Winter Park (Skimore Oslo)",
-    category: "Activities",
+    categories: ["Activities"],
     image: "/favorites-oslo-winter-park.jpg",
     mapsQuery: "Skimore Oslo",
     directions: [
@@ -470,9 +576,14 @@ function PlaceCard({
         </h2>
 
         <div className="mt-3 flex flex-wrap gap-2">
-          <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
-            {place.category}
-          </span>
+          {place.categories.map((category) => (
+            <span
+              key={category}
+              className="rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-600 dark:bg-zinc-800 dark:text-zinc-300"
+            >
+              {category}
+            </span>
+          ))}
           {place.time && (
             <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-600 dark:bg-zinc-800 dark:text-zinc-300">
               {place.time}
@@ -598,20 +709,27 @@ function PlaceCard({
 
 export default function FavoritesPage() {
   const [active, setActive] = useState<Filter>("All");
+  const [activeArea, setActiveArea] = useState<Area | null>(null);
+  const [areaOpen, setAreaOpen] = useState(false);
   const [scrollTick, setScrollTick] = useState(0);
   const pendingScrollRef = useRef<string | null>(null);
-  const visible = places.filter((p) => active === "All" || p.category === active);
+  const visible = places.filter(
+    (p) =>
+      (active === "All" || p.categories.includes(active)) &&
+      (!activeArea || p.areas?.includes(activeArea))
+  );
 
   useEffect(() => {
     if (!pendingScrollRef.current) return;
     document.getElementById(pendingScrollRef.current)?.scrollIntoView({ behavior: "smooth", block: "start" });
     pendingScrollRef.current = null;
-  }, [scrollTick, active]);
+  }, [scrollTick, active, activeArea]);
 
   function handleNavigate(name: string) {
     const target = places.find((p) => p.name === name);
     if (!target) return;
-    setActive(target.category);
+    setActive("All");
+    setActiveArea(null);
     pendingScrollRef.current = slugify(target.name);
     setScrollTick((t) => t + 1);
   }
@@ -654,12 +772,81 @@ export default function FavoritesPage() {
           ))}
         </div>
 
+        <div className="mt-4 flex flex-col items-center">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setAreaOpen((o) => !o)}
+              className="flex items-center gap-1 text-sm font-medium text-stone-500 transition-colors hover:text-stone-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+            >
+              {activeArea ? `Area: ${activeArea}` : "Explore by area"}
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className={`transition-transform duration-200 ${areaOpen ? "rotate-180" : ""}`}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            {activeArea && (
+              <button
+                type="button"
+                onClick={() => setActiveArea(null)}
+                aria-label="Clear area filter"
+                className="text-stone-400 transition-colors hover:text-stone-700 dark:text-zinc-500 dark:hover:text-zinc-200"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+
+          {areaOpen && (
+            <div className="mt-3 flex flex-wrap justify-center gap-2">
+              {areas.map((area) => (
+                <button
+                  key={area}
+                  type="button"
+                  onClick={() => {
+                    setActiveArea((current) => (current === area ? null : area));
+                    setAreaOpen(false);
+                  }}
+                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
+                    activeArea === area
+                      ? "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900"
+                      : "bg-white text-stone-600 ring-1 ring-stone-200 hover:bg-stone-100 dark:bg-zinc-900 dark:text-zinc-300 dark:ring-zinc-800 dark:hover:bg-zinc-800"
+                  }`}
+                >
+                  {area}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {activeArea && (
+          <div className="mt-5 rounded-2xl bg-stone-100/70 px-4 py-3 dark:bg-zinc-900/60">
+            <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+              {activeArea}{" "}
+              <span className="font-normal text-stone-400 dark:text-zinc-500">
+                · {areaInfo[activeArea].time}
+              </span>
+            </p>
+            <p className="mt-1 text-sm leading-6 text-stone-600 dark:text-zinc-300">
+              {areaInfo[activeArea].description}
+            </p>
+          </div>
+        )}
+
         <div className="mt-6 flex flex-col gap-5">
           {visible.length === 0 ? (
             <p className="mt-6 text-center text-sm text-stone-400 dark:text-zinc-500">
-              {active === "All"
+              {active === "All" && !activeArea
                 ? "Recommendations coming soon."
-                : `No ${active.toLowerCase()} added yet.`}
+                : "No recommendations match this combination yet."}
             </p>
           ) : (
             visible.map((place) => (
