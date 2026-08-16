@@ -218,8 +218,8 @@ const places: Place[] = [
   {
     name: "Galgen",
     categories: ["Cafés", "Restaurants", "Bars"],
-    areas: ["Nearby", "Kampen & Tøyen"],
-    image: "/favorites-galgen.jpg",
+    areas: ["Nearby"],
+    image: "/favorites-galgen-v2.jpg",
     directions: [
       "🚶 15 min walk",
       "🚌 Take bus 54 towards Kjelsås stasjon and get off at St Halvards gate, then walk 4–5 minutes.",
@@ -231,7 +231,7 @@ const places: Place[] = [
     name: "Kruttverket",
     categories: ["Cafés", "Bars", "Activities"],
     areas: ["Nearby"],
-    images: ["/favorites-kroloftet.jpg", "/favorites-kruttverket-v2.jpg"],
+    image: "/favorites-kruttverket-v3.jpg",
     mapsQuery: "Kruttverket Oslo",
     directions: [
       "🚶 Walk through Svartdalsparken for about 15 minutes. The scenic path follows the river all the way to Kruttverket.",
@@ -243,7 +243,7 @@ const places: Place[] = [
     name: "Håndbakt",
     categories: ["Cafés"],
     areas: ["Kampen & Tøyen"],
-    image: "/favorites-handbakt-v2.jpg",
+    image: "/favorites-handbakt-v3.jpg",
     mapsQuery: "Håndbakt Oslo",
     directions: ["🚶 20 min walk"],
     description:
@@ -253,7 +253,8 @@ const places: Place[] = [
     name: "Farine",
     categories: ["Cafés"],
     areas: ["Kampen & Tøyen"],
-    image: "/favorites-farine.jpg",
+    image: "/favorites-farine-v4.jpg",
+    imagePosition: "25% center",
     mapsQuery: "Farine Kampen Oslo",
     directions: ["🚶 About 20 min walk"],
     description:
@@ -275,7 +276,7 @@ const places: Place[] = [
     name: "KUMI",
     categories: ["Cafés", "Restaurants"],
     areas: ["Bjørvika"],
-    image: "/favorites-kumi.jpg",
+    image: "/favorites-kumi-v4.jpg",
     mapsQuery: "KUMI Oslobukta",
     directions: [
       "🚶 20–25 min walk",
@@ -316,7 +317,7 @@ const places: Place[] = [
     name: "Tim Wendelboe",
     categories: ["Cafés"],
     areas: ["Grünerløkka"],
-    image: "/favorites-tim-wendelboe.jpg",
+    image: "/favorites-tim-wendelboe-v2.jpg",
     mapsQuery: "Tim Wendelboe Oslo",
     directions: [
       "🚶 45 min walk",
@@ -332,7 +333,7 @@ const places: Place[] = [
     image: "/favorites-brostein-v2.jpg",
     mapsQuery: "Brostein, St. Halvards gate 23, Oslo",
     directions: [
-      "🚶 About 10 min walk",
+      "🚶 10-15 min walk",
       "🚌 Take bus 54 towards Kjelsås stasjon and get off at St. Halvards gate (1 stop), then walk about 3 minutes.",
     ],
     description:
