@@ -4,7 +4,8 @@ import ApartmentDetailLayout from "../DetailLayout";
 const steps = [
   {
     title: "Load",
-    description: "Load your dishes into the dishwasher.",
+    description:
+      "Remove any leftover food and give the dishes a quick rinse with water before placing them in the dishwasher.",
   },
   {
     title: "Add tablet",

@@ -400,7 +400,7 @@ export default function EssentialsPage() {
                 {
                   title: "Take out the rubbish",
                   description:
-                    "If you've stayed for 3 nights or more, I'd really appreciate it if you could take out the rubbish before checking out.",
+                    "If you've stayed for 3 nights or more, I'd really appreciate it if you could take out the rubbish.",
                   bg: "bg-emerald-50 dark:bg-emerald-900/20",
                   fg: "text-emerald-700 dark:text-emerald-300",
                   icon: (
@@ -426,34 +426,9 @@ export default function EssentialsPage() {
                   ),
                 },
                 {
-                  title: "Windows & balcony door",
-                  description: "Close all windows and lock the balcony door.",
-                  bg: "bg-sky-50 dark:bg-sky-900/20",
-                  fg: "text-sky-700 dark:text-sky-300",
-                  icon: (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 3.75h15v16.5h-15V3.75ZM4.5 12h15M12 3.75v16.5"
-                    />
-                  ),
-                },
-                {
-                  title: "Lights",
-                  description: "Turn off the lights.",
-                  bg: "bg-yellow-50 dark:bg-yellow-900/20",
-                  fg: "text-yellow-700 dark:text-yellow-300",
-                  icon: (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 3.75a5.25 5.25 0 0 0-3.128 9.464c.415.312.628.812.628 1.34v.696a1.5 1.5 0 0 0 1.5 1.5h2a1.5 1.5 0 0 0 1.5-1.5v-.696c0-.528.213-1.028.628-1.34A5.25 5.25 0 0 0 12 3.75ZM9.75 19.5h4.5"
-                    />
-                  ),
-                },
-                {
                   title: "Dishes",
-                  description: "Put any dirty dishes in the dishwasher.",
+                  description:
+                    "Put any dirty dishes in the dishwasher and start it.",
                   bg: "bg-violet-50 dark:bg-violet-900/20",
                   fg: "text-violet-700 dark:text-violet-300",
                   icon: (
@@ -463,17 +438,19 @@ export default function EssentialsPage() {
                       d="M4.5 3.75h15v16.5h-15V3.75ZM7.5 6.75h.008M9.75 6.75h.008M12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
                     />
                   ),
+                  link: { label: "How to use the dishwasher", href: "/apartment/dishwasher" },
                 },
                 {
-                  title: "Apartment door",
-                  description: "Lock the apartment door.",
-                  bg: "bg-slate-50 dark:bg-zinc-800",
-                  fg: "text-slate-700 dark:text-zinc-300",
+                  title: "Final check",
+                  description:
+                    "Turn off the lights, close all windows, and lock the balcony and apartment doors.",
+                  bg: "bg-sky-50 dark:bg-sky-900/20",
+                  fg: "text-sky-700 dark:text-sky-300",
                   icon: (
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M6.75 10.5V7.5a5.25 5.25 0 0 1 10.5 0v3M5.25 10.5h13.5v9H5.25v-9Z"
+                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     />
                   ),
                 },
