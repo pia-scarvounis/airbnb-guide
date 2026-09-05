@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600"] });
@@ -23,8 +23,33 @@ function WifiIcon({ className }: { className?: string }) {
   );
 }
 
+const MAX_PASSWORD_FONT_SIZE = 24;
+const MIN_PASSWORD_FONT_SIZE = 10;
+
 export default function WifiPage() {
   const [copied, setCopied] = useState(false);
+  const passwordRowRef = useRef<HTMLDivElement>(null);
+  const passwordTextRef = useRef<HTMLParagraphElement>(null);
+  const [passwordFontSize, setPasswordFontSize] = useState(MAX_PASSWORD_FONT_SIZE);
+
+  useLayoutEffect(() => {
+    function fitPassword() {
+      const row = passwordRowRef.current;
+      const text = passwordTextRef.current;
+      if (!row || !text) return;
+      text.style.fontSize = `${MAX_PASSWORD_FONT_SIZE}px`;
+      const available = row.clientWidth;
+      const needed = text.scrollWidth;
+      const size =
+        needed > available
+          ? Math.max(MIN_PASSWORD_FONT_SIZE, (available / needed) * MAX_PASSWORD_FONT_SIZE)
+          : MAX_PASSWORD_FONT_SIZE;
+      setPasswordFontSize(size);
+    }
+    fitPassword();
+    window.addEventListener("resize", fitPassword);
+    return () => window.removeEventListener("resize", fitPassword);
+  }, []);
 
   async function handleCopy() {
     try {
@@ -69,11 +94,15 @@ export default function WifiPage() {
         </div>
 
         <div className="mt-4 flex items-center justify-between gap-4 rounded-3xl bg-white p-6 shadow-md shadow-black/5 dark:bg-zinc-900">
-          <div className="min-w-0">
+          <div ref={passwordRowRef} className="min-w-0">
             <p className="text-xs font-semibold tracking-widest text-stone-400 dark:text-zinc-500">
               PASSWORD
             </p>
-            <p className={`${playfair.className} truncate text-2xl text-zinc-900 dark:text-zinc-50`}>
+            <p
+              ref={passwordTextRef}
+              style={{ fontSize: `${passwordFontSize}px` }}
+              className={`${playfair.className} whitespace-nowrap text-zinc-900 dark:text-zinc-50`}
+            >
               {WIFI.password}
             </p>
           </div>
