@@ -4,7 +4,7 @@ export default function LongStaysPage() {
   return (
     <ApartmentDetailLayout title="Long Stays">
       <p>
-        If you&apos;re staying for a week or longer, here are a few extra
+        If you&apos;re staying for several weeks or longer, here are a few extra
         things that may make your stay more comfortable.
       </p>
 
